@@ -17,3 +17,4 @@
 '''
 
 from api import *
+from leagues import *
