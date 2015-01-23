@@ -3,8 +3,8 @@
 
 A python module packaged for Kodi to wrap the main thesportsdb API methods.
 
-[b]Work in progress. 
-At the moment, only the queries are implemented without any further parsing of the obtained results[/b]
+Work in progress. 
+At the moment, only the queries are implemented without any further parsing of the obtained results
 
 ##Usage
 
