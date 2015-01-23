@@ -27,6 +27,7 @@ Every function returns a python dictionary.
 
 ###Query methods
 
+####Search
 * Search 
 
 Search team by name
