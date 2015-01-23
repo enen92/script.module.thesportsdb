@@ -17,6 +17,7 @@ The module most be imported in the addon.xml of your addon
 ###Pythonic usage
 
 The module follows the api structure mentioned [Here](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=5)
+
 Every group method (Search,Lookups,Schedules,Livescores) is a python class; every method (e.g lookupleague) is a function of the respective group method. Arguments must be urlencoded and can be of any type (they all will be converted to strings).
 See example below:
 
