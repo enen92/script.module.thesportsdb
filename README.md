@@ -23,95 +23,153 @@ See example below:
 
 ```python
 import thesportsdb
-print thesportsdb.Search().searchteams(TeamName="arsenal")
+print thesportsdb.Search().searchteams("arsenal")
 ```
 Every function returns a python dictionary.
 
 ###Query methods
 
 ####Search
-Search team by name
+* Search teams a by name
 ```python
-thesportsdb.Search().searchteams(TeamName="arsenal")
+thesportsdb.Search().searchteams(TeamName)
 ```
+`eg:thesportsdb.Search().searchteams("arsenal")`
 
-Search player by name
+* Search player by name (or player in team)
 ```python
-thesportsdb.Search().searchplayers(PlayerName="messi")
+thesportsdb.Search().searchplayers(TeamName,PlayerName)
 ```
+`eg: thesportsdb.Search().searchplayers(None,"messi")`
+`eg: thesportsdb.Search().searchplayers("barcelona","messi")`
 
-Search player by name in team
+* Search event by name and season
 ```python
-thesportsdb.Search().searchplayers(PlayerName="messi",TeamName="barcelona")
+thesportsdb.Search().searchevents(Event,Season)
 ```
+`eg:thesportsdb.Search().searchevents("arsenal%20chelsea",None)` returns all matched events
+`eg:thesportsdb.Search().searchevents("arsenal%20chelsea","1415")` returns all matched events for specified season
 
-Search event by name
+* Search leagues by sport and country
 ```python
-thesportsdb.Search().searchevents(Event="arsenal%20chelsea")
+thesportsdb.Search().search_all_leagues(SportName,CountryName,LeagueName)
 ```
-
-Search event by name and season
-```python
-thesportsdb.Search().searchevents(Event="arsenal%20chelsea",Season="1415")
-```
-
-Search leagues by sport
-```python
-thesportsdb.Search().search_all_leagues(SportName="soccer")
-```
-
-Search leagues by sport and country
-```python
-thesportsdb.Search().search_all_leagues(SportName="soccer",CountryName="england")
-```
-
-Search leagues by league name
-```python
-thesportsdb.Search().search_all_leagues(LeagueName="English%20Premier%20League")
-```
+`eg:thesportsdb.Search().search_all_leagues("soccer",None,None)` returns all leagues by sport
+`eg:thesportsdb.Search().search_all_leagues("soccer","england",None)` returns all leagues by sport and country
+`eg:thesportsdb.Search().search_all_leagues(None,None,"English%20Premier%20League")` returns all leagues by sport and country
 
 ####Lookups
 
-Lookup league by league id
+* Lookup league by league id
 ```python
-thesportsdb.Lookups().lookupleague(LeagueId=4346)
+thesportsdb.Lookups().lookupleague(LeagueId)
 ```
+`eg:thesportsdb.Lookups().lookupleague(4346)`
 
-Lookup team by team id
+* Lookup team by team id
 ```python
-thesportsdb.Lookups().lookupteam(TeamId=133604)
+thesportsdb.Lookups().lookupteam(TeamId)
 ```
+`eg:thesportsdb.Lookups().lookupteam(133604)`
 
-Lookup player by player id
+* Lookup player by player id
 ```python
-thesportsdb.Lookups().lookupteam(PlayerId=34145937)
+thesportsdb.Lookups().lookupplayer(PlayerId)
 ```
+`eg:thesportsdb.Lookups().lookupplayer(34145937)`
 
-Lookup event by event id
+* Lookup event by event id
 ```python
-thesportsdb.Lookups().lookupevent(EventId=441613)
+thesportsdb.Lookups().lookupevent(EventId)
 ```
+`eg:thesportsdb.Lookups().lookupevent(441613)`
 
 ####Schedules
 
-Returns the next 5 events for a specific teamID
+* Returns the next 5 events for a specific teamID
 ```python
-thesportsdb.Schedules().eventsnext(TeamId=133604)
+thesportsdb.Schedules().eventsnext(TeamId)
 ```
+`eg:thesportsdb.Schedules().eventsnext(133604)`
 
-Returns the last 5 events for a specific teamID
+* Returns the last 5 events for a specific teamID
 ```python
-thesportsdb.Schedules().eventslast(TeamId=133604)
+thesportsdb.Schedules().eventslast(TeamId)
 ```
+`eg:thesportsdb.Schedules().eventslast(133604)`
 
-Returns next events for a League
+* Returns next events for a League
 ```python
-thesportsdb.Schedules().eventsnextleague(LeagueId=4346)
+thesportsdb.Schedules().eventsnextleague(LeagueId)
 ```
+`eg:thesportsdb.Schedules().eventsnextleague(4346)`
 
 ####LiveScores
 
-Returns the livescores for soccer
+* Returns the livescores for soccer
 ```python
 thesportsdb.LiveScores().latestsoccer()
+```
+
+
+###Parsing methods methods
+
+Parsing methods receive a dictionary object and return the desired property of the league, team or event object. See example below:
+
+```python
+import thesportsdb
+league = thesportsdb.Lookups().lookupleague(4346)
+print thesportsdb.Leagues().get_badge(league)
+```
+
+####Leagues
+
+* Returns league ID for the provided league object
+```python
+thesportsdb.Leagues().get_id(League)
+```
+
+* Returns the sport for the provided league object
+```python
+thesportsdb.Leagues().get_sport(League)
+```
+
+* Returns league name for the provided league object
+```python
+thesportsdb.Leagues().get_name(League)
+```
+
+* Returns league ID for the provided league object
+```python
+thesportsdb.Leagues().formedyear(League)
+```
+
+* Returns league gender for the provided league object
+```python
+thesportsdb.Leagues().gender(League)
+```
+
+* Returns league country for the provided league object
+```python
+thesportsdb.Leagues().country(League)
+```
+
+* Returns league website for the provided league object
+```python
+thesportsdb.Leagues().website(League)
+```
+
+* Returns league facebook for the provided league object
+```python
+thesportsdb.Leagues().facebook(League)
+```
+
+* Returns league twitter for the provided league object
+```python
+thesportsdb.Leagues().twitter(League)
+```
+
+* Returns league youtube for the provided league object
+```python
+thesportsdb.Leagues().youtube(League)
 ```
