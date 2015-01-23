@@ -23,7 +23,7 @@ See example below:
 
 ```python
 import thesportsdb
-print thesportsdb.Search().searchteams(TeamName="arsenal")
+print thesportsdb.Search().searchteams("arsenal")
 ```
 Every function returns a python dictionary.
 
