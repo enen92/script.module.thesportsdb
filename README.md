@@ -111,7 +111,7 @@ thesportsdb.Schedules().eventsnextleague(LeagueId=4346)
 
 ####LiveScores
 
-Returns next events for a League
+Returns the livescores for soccer
 ```python
 thesportsdb.LiveScores().latestsoccer()
 ```
