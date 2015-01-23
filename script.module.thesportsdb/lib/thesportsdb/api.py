@@ -25,22 +25,22 @@ class Search:
 	def __init__(self):
 		pass
 	
-	def searchteams(self,TeamName=None):
+	def searchteams(self,TeamName):
 		url = '%s/%s/searchteams.php?t=%s' % (API_BASE_URL,API_KEY,str(TeamName))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def searchplayers(self,TeamName=None,PlayerName=None):
+	def searchplayers(self,TeamName,PlayerName):
 		if TeamName and not PlayerName:
-			url = '%s/%s/searchplayers.php?t=%s' % (API_BASE_URL,API_KEY,str(TeamName)
-		elif not TeamName and PlayerName:
+			url = '%s/%s/searchplayers.php?t=%s' % (API_BASE_URL,API_KEY,str(TeamName))
+		elif PlayerName and not TeamName:
 			url = '%s/%s/searchplayers.php?p=%s' % (API_BASE_URL,API_KEY,str(PlayerName))
 		else:
 			url = '%s/%s/searchplayers.php?t=%s&p=%s' % (API_BASE_URL,API_KEY,str(TeamName),str(PlayerName))
 		data = json.load(urllib2.urlopen(url))
 		return data
 	
-	def searchevents(self,Event=None,Season=None):
+	def searchevents(self,Event,Season):
 		if Event and not Season:
 			url = '%s/%s/searchevents.php?e=%s' % (API_BASE_URL,API_KEY,str(Event))
 		else:
@@ -48,18 +48,16 @@ class Search:
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def search_all_leagues(self,CountryName=None,SportName=None):
+	def search_all_leagues(self,CountryName,SportName,LeagueName):
 		if SportName and not CountryName:
 			url = '%s/%s/search_all_leagues.php?s=%s' % (API_BASE_URL,API_KEY,str(SportName))
 		elif SportName and CountryName:
 			url = '%s/%s/search_all_leagues.php?s=%s&c=%s' % (API_BASE_URL,API_KEY,str(SportName),str(CountryName))
 		else:
-			url = '%s/%s/search_all_leagues.php?&c=%s' % (API_BASE_URL,API_KEY,str(CountryName))
-		data = json.load(urllib2.urlopen(url))
-		return data
-		
-	def search_all_leagues(self,LeagueName=None)
-		url = '%s/%s/search_all_teams.php?l=%s' % (API_BASE_URL,API_KEY,str(LeagueName))
+			if LeagueName:
+				url = '%s/%s/search_all_teams.php?l=%s' % (API_BASE_URL,API_KEY,str(LeagueName))
+			else:
+				url = '%s/%s/search_all_leagues.php?&c=%s' % (API_BASE_URL,API_KEY,str(CountryName))
 		data = json.load(urllib2.urlopen(url))
 		return data
 	
@@ -68,22 +66,22 @@ class Lookups:
 	def __init__(self):
 		pass
 		
-	def lookupleague(self,LeagueId=None):
+	def lookupleague(self,LeagueId):
 		url = '%s/%s/lookupleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def lookupteam(self,TeamId=None):
+	def lookupteam(self,TeamId):
 		url = '%s/%s/lookupteam.php?id=%s' % (API_BASE_URL,API_KEY,str(TeamId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def lookupplayer(self,PlayerId=None):
+	def lookupplayer(self,PlayerId):
 		url = '%s/%s/lookuplayer.php?id=%s' % (API_BASE_URL,API_KEY,str(PlayerId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def lookupevent(self,EventId=None):
+	def lookupevent(self,EventId):
 		url = '%s/%s/lookuevent.php?id=%s' % (API_BASE_URL,API_KEY,str(EventId))
 		data = json.load(urllib2.urlopen(url))
 		return data
@@ -93,17 +91,17 @@ class Schedules:
 	def __init__(self):
 		pass
 	
-	def eventsnext(self,TeamId)
+	def eventsnext(self,TeamId):
 		url = '%s/%s/eventsnext.php?id=%s' % (API_BASE_URL,API_KEY,str(TeamId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
-	def eventslast(self,TeamId)
+	def eventslast(self,TeamId):
 		url = '%s/%s/eventslast.php?id=%s' % (API_BASE_URL,API_KEY,str(TeamId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 	
-	def eventsnextleague(self,LeagueId)
+	def eventsnextleague(self,LeagueId):
 		url = '%s/%s/eventsnextleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
 		data = json.load(urllib2.urlopen(url))
 		return data
