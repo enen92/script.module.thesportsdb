@@ -21,10 +21,57 @@ Every group method (Search,Lookups,Schedules,Livescores) is a python class; ever
 
 ```python
 import thesportsdb
-print thesportsdb.Search().searchteams("arsenal")
+print thesportsdb.Search().searchteams(TeamName="arsenal")
 ```
 Every function returns a python dictionary.
 
-####List of functions
-* Search *
+###Query methods
+
+* Search 
+
+Search team by name
+```python
+thesportsdb.Search().searchteams(TeamName="arsenal")
+```
+
+Search player by name
+```python
+thesportsdb.Search().searchplayers(PlayerName="messi")
+```
+
+Search player by name in team
+```python
+thesportsdb.Search().searchplayers(PlayerName="messi",TeamName="barcelona")
+```
+
+Search event by name
+```python
+thesportsdb.Search().searchevents(Event="arsenal%20chelsea")
+```
+
+Search event by name and season
+```python
+thesportsdb.Search().searchevents(Event="arsenal%20chelsea",Season="1415")
+```
+
+Search leagues by sport
+```python
+thesportsdb.Search().search_all_leagues(SportName="soccer")
+```
+
+Search leagues by sport and country
+```python
+thesportsdb.Search().search_all_leagues(SportName="soccer",CountryName="england")
+```
+
+Search leagues by league name
+```python
+thesportsdb.Search().search_all_leagues(LeagueName="English%20Premier%20League)
+```
+
+* Lookups
+
+
+
+
 
