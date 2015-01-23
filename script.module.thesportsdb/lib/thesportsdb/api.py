@@ -15,8 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
-import json
-import urllib,urllib2
+import json,urllib,urllib2
 
 API_KEY = '1'
 API_BASE_URL = 'http://www.thesportsdb.com/api/v1/json'
@@ -118,20 +117,3 @@ class LiveScores:
 		url = '%s/%s/latestsoccer.php' % (API_BASE_URL,API_KEY)
 		data = json.load(urllib2.urlopen(url))
 		return data
-
-
-
-
-
-		
-		
-
-
-	
-		
-			
-			
-	
-
-
-
