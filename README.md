@@ -4,3 +4,25 @@
 A python module packaged for Kodi to wrap the main thesportsdb API methods.
 
 ##Usage
+
+###Addon.xml
+The module most be imported in the addon.xml of your addon
+```xml
+<import addon="script.module.thesportsdb"/>
+```
+
+###Pythonic usage
+
+The module follows the api structure mentioned [Here](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=5)
+Every group method (Search,Lookups,Schedules,Livescores) is a python class; every method (e.g lookupleague) is a function of the respective group. See example below:
+
+```python
+import thesportsdb
+print thesportsdb.Search().searchteams("arsenal")
+```
+
+Every function returns a python dictionary
+
+####List of functions
+* Search *
+
