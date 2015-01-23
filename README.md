@@ -110,3 +110,66 @@ thesportsdb.Schedules().eventsnextleague(LeagueId)
 ```python
 thesportsdb.LiveScores().latestsoccer()
 ```
+
+
+###Parsing methods methods
+
+Parsing methods receive a dictionary object and return the desired property of the league, team or event object. See example below:
+
+```python
+import thesportsdb
+league = thesportsdb.Lookups().lookupleague(4346)
+print thesportsdb.Leagues().get_badge(league)
+```
+
+####Leagues
+
+* Returns league ID for the provided league object
+```python
+thesportsdb.Leagues().get_id(League)
+```
+
+* Returns the sport for the provided league object
+```python
+thesportsdb.Leagues().get_sport(League)
+```
+
+* Returns league name for the provided league object
+```python
+thesportsdb.Leagues().get_name(League)
+```
+
+* Returns league ID for the provided league object
+```python
+thesportsdb.Leagues().formedyear(League)
+```
+
+* Returns league gender for the provided league object
+```python
+thesportsdb.Leagues().gender(League)
+```
+
+* Returns league country for the provided league object
+```python
+thesportsdb.Leagues().country(League)
+```
+
+* Returns league website for the provided league object
+```python
+thesportsdb.Leagues().website(League)
+```
+
+* Returns league facebook for the provided league object
+```python
+thesportsdb.Leagues().facebook(League)
+```
+
+* Returns league twitter for the provided league object
+```python
+thesportsdb.Leagues().twitter(League)
+```
+
+* Returns league youtube for the provided league object
+```python
+thesportsdb.Leagues().youtube(League)
+```
