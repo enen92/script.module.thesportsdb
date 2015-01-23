@@ -17,7 +17,8 @@ The module most be imported in the addon.xml of your addon
 ###Pythonic usage
 
 The module follows the api structure mentioned [Here](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=5)
-Every group method (Search,Lookups,Schedules,Livescores) is a python class; every method (e.g lookupleague) is a function of the respective group. See example below:
+Every group method (Search,Lookups,Schedules,Livescores) is a python class; every method (e.g lookupleague) is a function of the respective group method. Arguments must be urlencoded and can be of any type (they all will be converted to strings).
+See example below:
 
 ```python
 import thesportsdb
@@ -28,8 +29,6 @@ Every function returns a python dictionary.
 ###Query methods
 
 ####Search
-* Search 
-
 Search team by name
 ```python
 thesportsdb.Search().searchteams(TeamName="arsenal")
@@ -67,12 +66,51 @@ thesportsdb.Search().search_all_leagues(SportName="soccer",CountryName="england"
 
 Search leagues by league name
 ```python
-thesportsdb.Search().search_all_leagues(LeagueName="English%20Premier%20League)
+thesportsdb.Search().search_all_leagues(LeagueName="English%20Premier%20League")
 ```
 
-* Lookups
+####Lookups
 
+Lookup league by league id
+```python
+thesportsdb.Lookups().lookupleague(LeagueId=4346)
+```
 
+Lookup team by team id
+```python
+thesportsdb.Lookups().lookupteam(TeamId=133604)
+```
 
+Lookup player by player id
+```python
+thesportsdb.Lookups().lookupteam(PlayerId=34145937)
+```
 
+Lookup event by event id
+```python
+thesportsdb.Lookups().lookupevent(EventId=441613)
+```
 
+####Schedules
+
+Returns the next 5 events for a specific teamID
+```python
+thesportsdb.Schedules().eventsnext(TeamId=133604)
+```
+
+Returns the last 5 events for a specific teamID
+```python
+thesportsdb.Schedules().eventslast(TeamId=133604)
+```
+
+Returns next events for a League
+```python
+thesportsdb.Schedules().eventsnextleague(LeagueId=4346)
+```
+
+####LiveScores
+
+Returns next events for a League
+```python
+thesportsdb.LiveScores().latestsoccer()
+```
