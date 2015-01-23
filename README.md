@@ -30,84 +30,80 @@ Every function returns a python dictionary.
 ###Query methods
 
 ####Search
-Search team by name
+Search teams a by name
 ```python
-thesportsdb.Search().searchteams(TeamName="arsenal")
+thesportsdb.Search().searchteams(TeamName)
 ```
+`eg:thesportsdb.Search().searchteams("arsenal")`
 
-Search player by name
+Search player by name (or player in team)
 ```python
-thesportsdb.Search().searchplayers(PlayerName="messi")
+thesportsdb.Search().searchplayers(TeamName,PlayerName)
 ```
+`eg: thesportsdb.Search().searchplayers(None,"messi")`
+`eg: thesportsdb.Search().searchplayers("barcelona","messi")`
 
-Search player by name in team
-```python
-thesportsdb.Search().searchplayers(PlayerName="messi",TeamName="barcelona")
-```
-
-Search event by name
-```python
-thesportsdb.Search().searchevents(Event="arsenal%20chelsea")
-```
 
 Search event by name and season
 ```python
-thesportsdb.Search().searchevents(Event="arsenal%20chelsea",Season="1415")
+thesportsdb.Search().searchevents(Event,Season)
 ```
-
-Search leagues by sport
-```python
-thesportsdb.Search().search_all_leagues(SportName="soccer")
-```
+`eg:thesportsdb.Search().searchevents("arsenal%20chelsea",None)` returns all matched events
+`eg:thesportsdb.Search().searchevents("arsenal%20chelsea","1415")` returns all matched events for specified season
 
 Search leagues by sport and country
 ```python
-thesportsdb.Search().search_all_leagues(SportName="soccer",CountryName="england")
+thesportsdb.Search().search_all_leagues(SportName,CountryName,LeagueName)
 ```
-
-Search leagues by league name
-```python
-thesportsdb.Search().search_all_leagues(LeagueName="English%20Premier%20League")
-```
+`eg:thesportsdb.Search().search_all_leagues("soccer",None,None)` returns all leagues by sport
+`eg:thesportsdb.Search().search_all_leagues("soccer","england",None)` returns all leagues by sport and country
+`eg:thesportsdb.Search().search_all_leagues(None,None,"English%20Premier%20League")` returns all leagues by sport and country
 
 ####Lookups
 
 Lookup league by league id
 ```python
-thesportsdb.Lookups().lookupleague(LeagueId=4346)
+thesportsdb.Lookups().lookupleague(LeagueId)
 ```
+`eg:thesportsdb.Lookups().lookupleague(4346)`
 
 Lookup team by team id
 ```python
-thesportsdb.Lookups().lookupteam(TeamId=133604)
+thesportsdb.Lookups().lookupteam(TeamId)
 ```
+`eg:thesportsdb.Lookups().lookupteam(133604)`
 
 Lookup player by player id
 ```python
-thesportsdb.Lookups().lookupteam(PlayerId=34145937)
+thesportsdb.Lookups().lookupplayer(PlayerId)
 ```
+`eg:thesportsdb.Lookups().lookupplayer(34145937)`
 
 Lookup event by event id
 ```python
-thesportsdb.Lookups().lookupevent(EventId=441613)
+thesportsdb.Lookups().lookupevent(EventId)
 ```
+`eg:thesportsdb.Lookups().lookupevent(441613)`
 
 ####Schedules
 
 Returns the next 5 events for a specific teamID
 ```python
-thesportsdb.Schedules().eventsnext(TeamId=133604)
+thesportsdb.Schedules().eventsnext(TeamId)
 ```
+`eg:thesportsdb.Schedules().eventsnext(133604)`
 
 Returns the last 5 events for a specific teamID
 ```python
-thesportsdb.Schedules().eventslast(TeamId=133604)
+thesportsdb.Schedules().eventslast(TeamId)
 ```
+`eg:thesportsdb.Schedules().eventslast(133604)`
 
 Returns next events for a League
 ```python
-thesportsdb.Schedules().eventsnextleague(LeagueId=4346)
+thesportsdb.Schedules().eventsnextleague(LeagueId)
 ```
+`eg:thesportsdb.Schedules().eventsnextleague(4346)`
 
 ####LiveScores
 
