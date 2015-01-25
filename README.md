@@ -141,35 +141,67 @@ thesportsdb.Leagues().get_name(League)
 
 * Returns league ID for the provided league object
 ```python
-thesportsdb.Leagues().formedyear(League)
+thesportsdb.Leagues().get_formedyear(League)
 ```
 
 * Returns league gender for the provided league object
 ```python
-thesportsdb.Leagues().gender(League)
+thesportsdb.Leagues().get_gender(League)
 ```
 
 * Returns league country for the provided league object
 ```python
-thesportsdb.Leagues().country(League)
+thesportsdb.Leagues().get_country(League)
 ```
 
 * Returns league website for the provided league object
 ```python
-thesportsdb.Leagues().website(League)
+thesportsdb.Leagues().get_website(League)
 ```
 
 * Returns league facebook for the provided league object
 ```python
-thesportsdb.Leagues().facebook(League)
+thesportsdb.Leagues().get_facebook(League)
 ```
 
 * Returns league twitter for the provided league object
 ```python
-thesportsdb.Leagues().twitter(League)
+thesportsdb.Leagues().get_twitter(League)
 ```
 
 * Returns league youtube for the provided league object
 ```python
-thesportsdb.Leagues().youtube(League)
+thesportsdb.Leagues().get_youtube(League)
+```
+
+* Returns league plot in english
+```python
+thesportsdb.Leagues().get_plot_en(League)
+```
+Note: get_plot_de,get_plot_fr,get_plot_it,get_plot_cn,get_plot_jp,get_plot_ru,get_plot_es,get_plot_pt,get_plot_pt,get_plot_nl,get_plot_hu,get_plot_no,get_plot_pl returns the league plot in the respective language and fallback to english plot if it does not exist.
+
+* Returns league fanart
+```python
+thesportsdb.Leagues().get_fanart(League)
+```
+The output of this function is a python list containing all the available fanarts. It does return an empty list if none is available
+
+* Returns league banner
+```python
+thesportsdb.Leagues().get_banner(League)
+```
+
+* Returns league badge
+```python
+thesportsdb.Leagues().get_badge(League)
+```
+
+* Returns league logo (clear art)
+```python
+thesportsdb.Leagues().get_logo(League)
+```
+
+* Returns league trophy (clear art)
+```python
+thesportsdb.Leagues().get_trophy(League)
 ```
