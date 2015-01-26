@@ -60,6 +60,11 @@ class Search:
 				url = '%s/%s/search_all_leagues.php?&c=%s' % (API_BASE_URL,API_KEY,str(CountryName))
 		data = json.load(urllib2.urlopen(url))
 		return data
+		
+	def search_all_teams(self,LeagueName):
+		url = '%s/%s/search_all_teams.php?l=%s' % (API_BASE_URL,API_KEY,str(LeagueName))
+		data = json.load(urllib2.urlopen(url))
+		return data
 	
 
 class Lookups:
