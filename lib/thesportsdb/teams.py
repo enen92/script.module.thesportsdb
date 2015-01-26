@@ -160,10 +160,10 @@ class Teams:
 	
 	def get_fanart_list(self,team):
 		fanart_list = []
-		if league["strTeamFanart1"]: fanart_list.append(league["strTeamFanart1"])
-		if league["strTeamFanart2"]: fanart_list.append(league["strTeamFanart2"])
-		if league["strTeamFanart3"]: fanart_list.append(league["strTeamFanart3"])
-		if league["strTeamFanart4"]: fanart_list.append(league["strTeamFanart4"])
+		if team["strTeamFanart1"]: fanart_list.append(team["strTeamFanart1"])
+		if team["strTeamFanart2"]: fanart_list.append(team["strTeamFanart2"])
+		if team["strTeamFanart3"]: fanart_list.append(team["strTeamFanart3"])
+		if team["strTeamFanart4"]: fanart_list.append(team["strTeamFanart4"])
 		return fanart_list
 		
 	def get_fanart_general1(self,team):
@@ -174,8 +174,8 @@ class Teams:
 		
 	def get_fanart_general_list(self,team):
 		fanart_list = []
-		if league["strTeamFanart1"]: fanart_list.append(league["strTeamFanart1"])
-		if league["strTeamFanart2"]: fanart_list.append(league["strTeamFanart2"])
+		if team["strTeamFanart1"]: fanart_list.append(team["strTeamFanart1"])
+		if team["strTeamFanart2"]: fanart_list.append(team["strTeamFanart2"])
 		return fanart_list
 	
 	def get_fanart_player(self,team):
