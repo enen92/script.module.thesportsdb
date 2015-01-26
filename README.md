@@ -58,6 +58,12 @@ thesportsdb.Search().search_all_leagues(SportName,CountryName,LeagueName)
 `eg:thesportsdb.Search().search_all_leagues("soccer","england",None)` returns all leagues by sport and country
 `eg:thesportsdb.Search().search_all_leagues(None,None,"English%20Premier%20League")` returns all leagues by sport and country
 
+* Search all teams in a League:
+```python
+thesportsdb.Search().search_all_teams(LeagueName)
+```
+`eg:thesportsdb.Search().search_all_teams("English%20Premier%20League")`
+
 ####Lookups
 
 * Lookup league by league id
