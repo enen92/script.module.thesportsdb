@@ -28,7 +28,7 @@ class Teams:
 		return str(team["intLoved"])
 	
 	def get_name(self,team):
-		return str(team["strTeam"])
+		return team["strTeam"]
 		
 	def get_shortname(self,team):
 		return str(team["strTeamShort"])
