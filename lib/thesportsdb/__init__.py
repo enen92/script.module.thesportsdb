@@ -19,3 +19,4 @@
 from api import *
 from leagues import *
 from teams import *
+from events import *
