@@ -188,7 +188,7 @@ class Teams:
 		return str(team["strTeamBanner"])
 		
 	def get_badge(self,team):
-		return str(team["strTeamBadge"])
+		return team["strTeamBadge"]
 		
 	def get_logo(self,team):
 		return str(team["strTeamLogo"])

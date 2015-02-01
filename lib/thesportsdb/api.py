@@ -120,7 +120,11 @@ class Schedules:
 		url = '%s/%s/eventsnextleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
 		data = json.load(urllib2.urlopen(url))
 		return data
-	
+		
+	def eventspasttleague(self,LeagueId):
+		url = '%s/%s/eventspasttleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
+		data = json.load(urllib2.urlopen(url))
+		return data
 
 class LiveScores:
 	def __init__(self):

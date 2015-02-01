@@ -25,7 +25,7 @@ class Events:
 		return event["strAwayRedCards"]
 		
 	def get_awayteamid(self,event):
-		return event["idAwayTeam"]
+		return str(event["idAwayTeam"])
 		
 	def get_awayteamname(self,event):
 		return event["strAwayTeam"]
@@ -45,7 +45,7 @@ class Events:
 	def get_racecountry(self,event):
 		return event["strRaceCountry"]
 	
-	def get_eventtile(self,event):
+	def get_eventtitle(self,event):
 		return event["strEvent"]
 		
 	def get_round(self,event):
@@ -54,7 +54,7 @@ class Events:
 	def get_tvstation(self,event):
 		return event["strTVStation"]
 		
-	def get_hometeam(self,event):
+	def get_hometeamname(self,event):
 		return event["strHomeTeam"]
 		
 	def get_date(self,event):
