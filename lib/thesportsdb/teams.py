@@ -60,6 +60,9 @@ class Teams:
 	def get_stadium_thumb(self,team):
 		return str(team["strStadiumThumb"])
 		
+	def get_team_jersey(self,team):
+		return str(team["strTeamJersey"])
+		
 	def get_stadium_plot(self,team):
 		return str(team["strStadiumDescription"])
 		
