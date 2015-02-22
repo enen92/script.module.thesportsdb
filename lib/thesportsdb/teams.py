@@ -42,6 +42,9 @@ class Teams:
 	def get_sport(self,team):
 		return str(team["strSport"])
 		
+	def get_rssurl(self,team):
+		return team["strRSS"]
+		
 	def get_league(self,team):
 		return str(team["strLeague"])
 		
@@ -52,25 +55,25 @@ class Teams:
 		return str(team["strDivision"])
 		
 	def get_manager(self,team):
-		return str(team["strManager"])
+		return team["strManager"]
 		
 	def get_stadium(self,team):
-		return str(team["strStadium"])
+		return team["strStadium"]
 	
 	def get_stadium_thumb(self,team):
-		return str(team["strStadiumThumb"])
+		return team["strStadiumThumb"]
 		
 	def get_team_jersey(self,team):
 		return str(team["strTeamJersey"])
 		
 	def get_stadium_plot(self,team):
-		return str(team["strStadiumDescription"])
+		return team["strStadiumDescription"]
 		
 	def get_stadium_location(self,team):
-		return str(team["strStadiumLocation"])
+		return team["strStadiumLocation"]
 		
 	def get_stadium_capacity(self,team):
-		return str(team["intStadiumCapacity"])
+		return team["intStadiumCapacity"]
 		
 	def get_team_website(self,team):
 		return str(team["strWebsite"])

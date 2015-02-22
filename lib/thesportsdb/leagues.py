@@ -34,6 +34,9 @@ class Leagues:
 		
 	def get_gender(self,league):
 		return str(league["strGender"])
+		
+	def get_rssurl(self,team):
+		return team["strRSS"]
 	
 	def get_country(self,league):
 		return str(league["strCountry"])
