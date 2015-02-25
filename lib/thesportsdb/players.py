@@ -34,7 +34,7 @@ class Players:
 		return str(player["strNationality"])
 		
 	def get_name(self,player):
-		return str(player["strPlayer"])
+		return player["strPlayer"]
 		
 	def get_teamname(self,player):
 		return str(player["strTeam"])
@@ -46,13 +46,13 @@ class Players:
 		return str(player["dateBorn"])
 		
 	def get_bornlocation(self,player):
-		return str(player["strBirthLocation"])
+		return player["strBirthLocation"]
 		
 	def get_signeddate(self,player):
 		return str(player["dateSigned"])
 		
 	def get_signedvalue(self,player):
-		return str(player["strSigning"])
+		return player["strSigning"]
 		
 	def get_plot_en(self,player):
 		return player["strDescriptionEN"]
@@ -159,9 +159,9 @@ class Players:
 		return player["strCutout"]
 		
 	def get_face(self,player):
-		face = get_cutout(player)
+		face = self.get_cutout(player)
 		if not face:
-			face = get_thumb(player)
+			face = self.get_thumb(player)
 		return face
 		
 	def get_fanart1(self,player):

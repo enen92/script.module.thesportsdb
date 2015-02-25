@@ -97,7 +97,7 @@ class Lookups:
 		return data
 		
 	def lookup_all_players(self,TeamId):
-		url = '%s/%s/lookup_all_teams.php?id=%s' % (API_BASE_URL,API_KEY,str(TeamId))
+		url = '%s/%s/lookup_all_players.php?id=%s' % (API_BASE_URL,API_KEY,str(TeamId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
