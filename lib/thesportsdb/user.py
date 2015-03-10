@@ -1,6 +1,6 @@
 '''
-    common XBMC Module
-    Copyright (C) 2011 t0mm0
+    script.module.thesportsdb - Python wrapper for thesportsdb API methods 
+    Copyright (C) 2015 enen92
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,10 +15,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
+import api
 
-from api import *
-from leagues import *
-from teams import *
-from events import *
-from players import *
-from user import *
+class User:
+	
+	def __init__(self):
+		pass
+	
+	def get_favourite_teams(self,user):
+		favourite_teams = []
+		result = api.Search().search_loves(user)["players"]
+		for entry in result:
+			if entry["strEditType"] == "Updated Team Loved":
+				if entry["idTeam"]:
+					favourite_teams.append(entry["idTeam"])
+		return favourite_teams
+		

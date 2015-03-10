@@ -40,7 +40,7 @@ class Teams:
 		return str(team["intFormedYear"])
 		
 	def get_sport(self,team):
-		return str(team["strSport"])
+		return team["strSport"]
 		
 	def get_rssurl(self,team):
 		return team["strRSS"]
