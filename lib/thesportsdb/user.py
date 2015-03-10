@@ -25,9 +25,10 @@ class User:
 	def get_favourite_teams(self,user):
 		favourite_teams = []
 		result = api.Search().search_loves(user)["players"]
-		for entry in result:
-			if entry["strEditType"] == "Updated Team Loved":
-				if entry["idTeam"]:
-					favourite_teams.append(entry["idTeam"])
+		if result:
+			for entry in result:
+				if entry["strEditType"] == "Updated Team Loved":
+					if entry["idTeam"]:
+						favourite_teams.append(entry["idTeam"])
 		return favourite_teams
 		
