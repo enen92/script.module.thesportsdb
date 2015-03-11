@@ -35,9 +35,9 @@ class Teams:
 		
 	#return alternative team name as first priority, return team name if alternative not defined	
 	def get_alternativefirst(self,team):
-		team_name = get_alternativename(team)
+		team_name = self.get_alternativename(team)
 		if team_name: return team_name
-		else: return get_name(team)
+		else: return self.get_name(team)
 		
 	def get_shortname(self,team):
 		return str(team["strTeamShort"])
