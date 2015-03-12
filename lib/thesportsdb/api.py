@@ -107,6 +107,12 @@ class Lookups:
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
+	def lookup_leaguetables(self,LeagueId,Season):
+		if Season: url = '%s/%s/lookuptable.php?l=%s&s=%s' % (API_BASE_URL,API_KEY,str(LeagueId),str(Season))
+		else: url = '%s/%s/lookuptable.php?l=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
+		data = json.load(urllib2.urlopen(url))
+		return data
+		
 		
 class Schedules:
 	def __init__(self):
@@ -129,12 +135,6 @@ class Schedules:
 		
 	def eventspastleague(self,LeagueId):
 		url = '%s/%s/eventspastleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
-		data = json.load(urllib2.urlopen(url))
-		return data
-		
-	def leaguetables(self,LeagueId,Season):
-		if Season: url = '%s/%s/lookuptable.php?l=%s&s=%s' % (API_BASE_URL,API_KEY,str(LeagueId),str(Season))
-		else: url = '%s/%s/lookuptable.php?l=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 
