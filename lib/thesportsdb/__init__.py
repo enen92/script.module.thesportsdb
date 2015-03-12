@@ -22,3 +22,4 @@ from teams import *
 from events import *
 from players import *
 from user import *
+from tables import *
