@@ -80,7 +80,7 @@ class Livematch:
 		return event["Hometeam"]
 		
 	def get_homegoals_number(self,event):
-		return event["HomeGoals"]
+		return str(event["HomeGoals"])
 		
 	def get_homegoals_detail(self,event):
 		return event["HomeGoalDetails"]
@@ -137,5 +137,8 @@ class Livematch:
 		
 	def get_away_subdetails(self,event):
 		return event["AwaySubDetails"]
+		
+	def get_awaygoals_number(self,event):
+		return str(event["AwayGoals"])
 		
 
