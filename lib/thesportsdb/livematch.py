@@ -52,7 +52,7 @@ class Livematch:
 	#hometeam
 		
 	def get_homegoalkeeper(self,event):
-		return event["HomeLineupGoalkeeper"])
+		return event["HomeLineupGoalkeeper"]
 		
 	def get_homedefense(self,event):
 		return event["HomeLineupDefense"]
@@ -63,9 +63,7 @@ class Livematch:
 	def get_homeformation(self,event):
 		return event["HomeTeamFormation"]
 		
-	def get_homeformation(self,event):
-		return event["HomeTeamFormation"]
-		
+	
 	def get_homeforward(self,event):
 		return event["HomeLineupForward"]
 		
