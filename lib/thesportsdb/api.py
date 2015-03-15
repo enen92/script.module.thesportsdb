@@ -137,6 +137,17 @@ class Schedules:
 		url = '%s/%s/eventspastleague.php?id=%s' % (API_BASE_URL,API_KEY,str(LeagueId))
 		data = json.load(urllib2.urlopen(url))
 		return data
+		
+	def eventsday(self,Day,Sport,League):
+		if Day and Sport:
+			url = '%s/%s/eventsday.php?d=%s&s=%s' % (API_BASE_URL,API_KEY,str(Day),str(Sport))
+		elif Day and League:
+			url = '%s/%s/eventsday.php?d=%s&l=%s' % (API_BASE_URL,API_KEY,str(Day),str(League))
+		elif Day and not League and not Sport:
+			url = '%s/%s/eventsday.php?d=%s' % (API_BASE_URL,API_KEY,str(Day))
+		data = json.load(urllib2.urlopen(url))
+		return data
+
 
 class LiveScores:
 	def __init__(self):
