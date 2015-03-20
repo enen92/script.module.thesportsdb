@@ -93,7 +93,7 @@ class Lookups:
 		return data
 		
 	def lookupevent(self,EventId):
-		url = '%s/%s/lookuevent.php?id=%s' % (API_BASE_URL,API_KEY,str(EventId))
+		url = '%s/%s/lookupevent.php?id=%s' % (API_BASE_URL,API_KEY,str(EventId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		

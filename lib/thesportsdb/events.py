@@ -20,6 +20,9 @@ class Events:
 	
 	def __init__(self):
 		pass
+		
+	def get_homeredcards(self,event):
+		return event["strHomeRedCards"]
 	
 	def get_awayredcards(self,event):
 		return event["strAwayRedCards"]
@@ -62,6 +65,9 @@ class Events:
 		
 	def get_homegoaldetails(self,event):
 		return event["strHomeGoalDetails"]
+	
+	def get_awaygoaldetails(self,event):
+		return event["strAwayGoalDetails"]
 		
 	def get_homeshots(self,event):
 		return event["intHomeShots"]
@@ -81,6 +87,9 @@ class Events:
 	def get_awayyellowcards(self,event):
 		return event["strAwayYellowCards"]
 		
+	def get_homeyellowcards(self,event):
+		return event["strHomeYellowCards"]
+		
 	def get_league(self,event):
 		return event["strLeague"]
 		
@@ -89,4 +98,40 @@ class Events:
 		
 	def get_hometeamid(self,event):
 		return event["idHomeTeam"]
+		
+	def get_homeformation(self,event):
+		return event["strHomeFormation"]
+		
+	def get_homegoalkeeper(self,event):
+		return event["strHomeLineupGoalkeeper"]
+		
+	def get_awaygoalkeeper(self,event):
+		return event["strAwayLineupGoalkeeper"]
+		
+	def get_homedefense(self,event):
+		return event["strHomeLineupDefense"]
+		
+	def get_awaydefense(self,event):
+		return event["strAwayLineupDefense"]
+		
+	def get_homemidfielders(self,event):
+		return event["strHomeLineupMidfield"]
+		
+	def get_awaymidfielders(self,event):
+		return event["strAwayLineupMidfield"]
+		
+	def get_homeforward(self,event):
+		return event["strHomeLineupForward"]
+		
+	def get_awayforward(self,event):
+		return event["strAwayLineupForward"]
+		
+	def get_homesubs(self,event):
+		return event["strHomeLineupSubstitutes"]
+		
+	def get_awaysubs(self,event):
+		return event["strAwayLineupSubstitutes"]
+		
+	def get_awayformation(self,event):
+		return event["strAwayFormation"]
 	
