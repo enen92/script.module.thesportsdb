@@ -137,4 +137,7 @@ class Events:
 		
 	def get_awayformation(self,event):
 		return event["strAwayFormation"]
+		
+	def get_time(self,event):
+		return event["strTime"]
 	
