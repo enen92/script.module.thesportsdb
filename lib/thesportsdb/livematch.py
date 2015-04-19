@@ -77,7 +77,7 @@ class Livematch:
 		return str(event["HomeTeam_Id"])
 		
 	def get_home_name(self,event):
-		return event["Hometeam"]
+		return event["HomeTeam"]
 		
 	def get_homegoals_number(self,event):
 		return event["HomeGoals"]
@@ -93,6 +93,10 @@ class Livematch:
 		
 	def get_home_subdetails(self,event):
 		return event["HomeSubDetails"]
+		
+	def get_home_sublineup(self,event):
+		return event["HomeLineupSubstitutes"]
+		
 		
 	#away
 		
@@ -127,7 +131,7 @@ class Livematch:
 		return event["AwayLineupDefense"]
 		
 	def get_away_name(self,event):
-		return event["Awayteam"]
+		return event["AwayTeam"]
 		
 	def get_away_redcards(self,event):
 		return event["AwayTeamRedCardDetails"]
@@ -137,5 +141,7 @@ class Livematch:
 		
 	def get_away_subdetails(self,event):
 		return event["AwaySubDetails"]
-		
+
+	def get_away_sublineup(self,event):
+		return event["AwayLineupSubstitutes"]		
 
