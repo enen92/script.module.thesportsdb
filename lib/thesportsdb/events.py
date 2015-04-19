@@ -23,6 +23,9 @@ class Events:
 		
 	def get_homeredcards(self,event):
 		return event["strHomeRedCards"]
+		
+	def get_leagueid(self,event):
+		return str(event["idLeague"])
 	
 	def get_awayredcards(self,event):
 		return event["strAwayRedCards"]
@@ -76,7 +79,7 @@ class Events:
 		return event["strSeason"]
 		
 	def get_sport(self,event):
-		return event["Soccer"]
+		return event["strSport"]
 		
 	def get_awayshots(self,event):
 		return event["intAwayShots"]
