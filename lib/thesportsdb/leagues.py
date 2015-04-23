@@ -58,67 +58,67 @@ class Leagues:
 		
 	def get_plot_de(self,league):
 		plot = league["strDescriptionDE"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_fr(self,league):
 		plot = league["strDescriptionFR"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 
 	def get_plot_it(self,league):
 		plot = league["strDescriptionIT"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_cn(self,league):
 		plot = league["strDescriptionCN"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 	
 	def get_plot_jp(self,league):
 		plot = league["strDescriptionJP"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_ru(self,league):
 		plot = league["strDescriptionRU"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_es(self,league):
 		plot = league["strDescriptionES"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_pt(self,league):
 		plot = league["strDescriptionPT"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_se(self,league):
 		plot = league["strDescriptionSE"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_nl(self,league):
 		plot = league["strDescriptionJP"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_hu(self,league):
 		plot = league["strDescriptionHU"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_no(self,league):
 		plot = league["strDescriptionNO"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 		
 	def get_plot_pl(self,league):
 		plot = league["strDescriptionPL"]
-		if not plot: plot = self.get_plot_en(league)
+		if not plot or plot == 'null': plot = self.get_plot_en(league)
 		return plot
 	
 	def get_fanart(self,league):

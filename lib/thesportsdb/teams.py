@@ -101,67 +101,67 @@ class Teams:
 		
 	def get_plot_de(self,team):
 		plot = team["strDescriptionDE"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_fr(self,team):
 		plot = team["strDescriptionFR"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 
 	def get_plot_it(self,team):
 		plot = team["strDescriptionIT"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_cn(self,team):
 		plot = team["strDescriptionCN"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 	
 	def get_plot_jp(self,team):
 		plot = team["strDescriptionJP"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_ru(self,team):
 		plot = team["strDescriptionRU"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_es(self,team):
 		plot = team["strDescriptionES"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_pt(self,team):
 		plot = team["strDescriptionPT"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_se(self,team):
 		plot = team["strDescriptionSE"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_nl(self,team):
 		plot = team["strDescriptionJP"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_hu(self,team):
 		plot = team["strDescriptionHU"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_no(self,team):
 		plot = team["strDescriptionNO"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_plot_pl(self,team):
 		plot = team["strDescriptionPL"]
-		if not plot: plot = self.get_plot_en(team)
+		if not plot or plot == 'null': plot = self.get_plot_en(team)
 		return plot
 		
 	def get_gender(self,team):
