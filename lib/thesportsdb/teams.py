@@ -36,14 +36,17 @@ class Teams:
 	#return alternative team name as first priority, return team name if alternative not defined	
 	def get_alternativefirst(self,team):
 		team_name = self.get_alternativename(team)
-		if team_name: return team_name
+		if team_name and team_name != 'null': return team_name
 		else: return self.get_name(team)
 		
 	def get_shortname(self,team):
 		return str(team["strTeamShort"])
 		
 	def get_formedyear(self,team):
-		return str(team["intFormedYear"])
+		year = team["intFormedYear"]
+		if year and year != 'null':
+			return str(year)
+		else: return ''
 		
 	def get_sport(self,team):
 		return team["strSport"]
