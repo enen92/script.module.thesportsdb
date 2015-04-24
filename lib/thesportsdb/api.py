@@ -149,9 +149,9 @@ class Schedules:
 		return data
 		
 	def eventsround(self,League,Round,Season):
-		if League and Rnd and not Season:
+		if League and Round and not Season:
 			url = '%s/%s/eventsround.php?id=%s&r=%s' % (API_BASE_URL,API_KEY,str(League),str(Round))
-		elif League and Rnd and Season:
+		elif League and Round and Season:
 			url = '%s/%s/eventsday.php?id=%s&r=%s&s=%s' % (API_BASE_URL,API_KEY,str(League),str(Round),str(Season))
 		data = json.load(urllib2.urlopen(url))
 		return data
