@@ -19,12 +19,12 @@ import api
 
 class User:
 	
-	def __init__(self):
-		pass
+	def __init__(self,API_KEY):
+		self.API_KEY = API_KEY
 	
 	def get_favourite_teams(self,user):
 		favourite_teams = []
-		result = api.Search().search_loves(user)["players"]
+		result = api.Search(self.API_KEY).search_loves(user)["players"]
 		if result:
 			for entry in result:
 				if entry["strEditType"] == "Updated Team Loved":
