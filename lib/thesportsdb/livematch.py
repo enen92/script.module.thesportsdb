@@ -18,7 +18,7 @@
 
 class Livematch:
 	
-	def __init__(self):
+	def __init__(self,API_KEY=None):
 		pass
 		
 	#event

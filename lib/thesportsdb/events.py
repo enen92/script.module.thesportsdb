@@ -18,7 +18,7 @@
 
 class Events:
 	
-	def __init__(self):
+	def __init__(self,API_KEY=None):
 		pass
 		
 	def get_homeredcards(self,event):
