@@ -15,11 +15,30 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
+import datetime
+import re
 
 class Events:
 	
 	def __init__(self,API_KEY=None):
 		pass
+		
+	def get_datetime_object(self,event):
+		event_date = self.get_eventdate(event)
+		event_time = self.get_time(event)
+		if event_date and event_date != 'null' and event_date != 'None':
+			date_array = event_date.split('-')
+			year = date_array[0]
+			month = date_array[1]
+			day = date_array[2]
+			if event_time and event_time != 'null' and event_time != 'None':
+				event_timematch = re.compile('(.+?)\+').findall(event_time)
+				event_timetmp = event_timematch[0].split(':')
+				hour = event_timetmp[0]
+				minute = event_timetmp[1]
+				return datetime.datetime(int(year), int(month), int(day), hour=int(hour), minute=int(minute))
+			else: return datetime.datetime(int(year), int(month), int(day))
+		else: return
 		
 	def get_homeredcards(self,event):
 		return event["strHomeRedCards"]
