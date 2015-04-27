@@ -174,4 +174,7 @@ class Events:
 		
 	def get_poster(self,event):
 		return event["strPoster"]
+		
+	def get_plot(self,event):
+		return event["strDescriptionEN"]
 	
