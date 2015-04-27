@@ -33,7 +33,10 @@ class Events:
 			day = date_array[2]
 			if event_time and event_time != 'null' and event_time != 'None':
 				event_timematch = re.compile('(.+?)\+').findall(event_time)
-				event_timetmp = event_timematch[0].split(':')
+				if event_timematch:
+					event_timetmp = event_timematch[0].split(':')
+				else:
+					event_timetmp = event_time.split(':')
 				hour = event_timetmp[0]
 				minute = event_timetmp[1]
 				return datetime.datetime(int(year), int(month), int(day), hour=int(hour), minute=int(minute))
@@ -159,4 +162,16 @@ class Events:
 		
 	def get_time(self,event):
 		return event["strTime"]
+		
+	def get_banner(self,event):
+		return event["strBanner"]
+		
+	def get_fanart(self,event):
+		return event["strFanart"]
+		
+	def get_thumb(self,event):
+		return event["strThumb"]
+		
+	def get_poster(self,event):
+		return event["strPoster"]
 	
