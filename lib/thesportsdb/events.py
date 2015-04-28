@@ -69,9 +69,6 @@ class Events:
 		
 	def get_homescore(self,event):
 		return event["intHomeScore"]
-		
-	def get_racecountry(self,event):
-		return event["strRaceCountry"]
 	
 	def get_eventtitle(self,event):
 		return event["strEvent"]
@@ -118,8 +115,14 @@ class Events:
 	def get_league(self,event):
 		return event["strLeague"]
 		
+	def get_racecountry(self,event):
+		return event["strRaceCountry"]
+		
 	def get_racelocation(self,event):
 		return event["strRaceLocality"]
+		
+	def get_racecircuit(self,event):
+		return event["strRaceCircuit"]
 		
 	def get_hometeamid(self,event):
 		return event["idHomeTeam"]
