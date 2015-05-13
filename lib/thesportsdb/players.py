@@ -143,6 +143,9 @@ class Players:
 	def get_instagram(self,player):
 		return str(player["strInstagram"])
 		
+	def get_youtube(self,player):
+		return str(player["strYoutube"])
+		
 	def get_height(self,player):
 		return str(player["strHeight"])
 		

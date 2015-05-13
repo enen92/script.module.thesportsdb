@@ -87,7 +87,7 @@ class Lookups:
 		return data
 		
 	def lookupplayer(self,PlayerId):
-		url = '%s/%s/lookuplayer.php?id=%s' % (API_BASE_URL,self.API_KEY,str(PlayerId))
+		url = '%s/%s/lookupplayer.php?id=%s' % (API_BASE_URL,self.API_KEY,str(PlayerId))
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
