@@ -180,4 +180,10 @@ class Events:
 		
 	def get_plot(self,event):
 		return event["strDescriptionEN"]
+		
+	def get_map(self,event):
+		return event["strMap"]
+		
+	def get_result(self,event):
+		return event["strResult"]
 	

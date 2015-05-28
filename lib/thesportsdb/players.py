@@ -151,6 +151,9 @@ class Players:
 		
 	def get_weight(self,player):
 		return str(player["strWeight"])
+		
+	def get_wage(self,player):
+		return str(player["strWage"])
 	
 	def get_likes(self,player):
 		return player["intLoved"]
@@ -165,6 +168,12 @@ class Players:
 		face = self.get_cutout(player)
 		if not face:
 			face = self.get_thumb(player)
+		return face
+		
+	def get_face_first(self,player):
+		face = self.get_thumb(player)
+		if not face:
+			face = self.get_cutout(player)
 		return face
 		
 	def get_fanart1(self,player):
