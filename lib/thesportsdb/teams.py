@@ -42,6 +42,9 @@ class Teams:
 	def get_shortname(self,team):
 		return str(team["strTeamShort"])
 		
+	def get_keywords(self,team):
+		return str(team["strKeywords"])
+		
 	def get_formedyear(self,team):
 		year = team["intFormedYear"]
 		if year and year != 'null':
