@@ -26,7 +26,6 @@ class Search:
 	
 	def searchteams(self,TeamName):
 		url = '%s/%s/searchteams.php?t=%s' % (API_BASE_URL,self.API_KEY,str(TeamName))
-		print url
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
@@ -37,7 +36,6 @@ class Search:
 			url = '%s/%s/searchplayers.php?p=%s' % (API_BASE_URL,self.API_KEY,str(PlayerName))
 		else:
 			url = '%s/%s/searchplayers.php?t=%s&p=%s' % (API_BASE_URL,self.API_KEY,str(TeamName),str(PlayerName))
-		print url
 		data = json.load(urllib2.urlopen(url))
 		return data
 	
@@ -46,7 +44,6 @@ class Search:
 			url = '%s/%s/searchevents.php?e=%s' % (API_BASE_URL,self.API_KEY,str(Event))
 		else:
 			url = '%s/%s/searchevents.php?e=%s&s=%s' % (API_BASE_URL,self.API_KEY,str(Event),str(Season))
-		print url
 		data = json.load(urllib2.urlopen(url))
 		return data
 		
