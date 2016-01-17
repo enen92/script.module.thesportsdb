@@ -5,6 +5,7 @@ import team as _team
 import league as _league
 import player as _player
 import event as _event
+import user as _user
 import livescores
 import tableentry
 import xbmc
@@ -213,36 +214,63 @@ class Api:
                 xbmc.log(msg="[TheSportsDB] country or league must be provided", level=xbmc.LOGERROR)
             return leaguelist
 
-        
-        #TODO
-        def Loves(self,user=None,option=None,objects=False):
-            lovelist = []
+        def Loves(self,user=None,objects=False):
             if user:
+                userobj = _user.User()
+                userobj.setUsername(user)
+                playerlist = []
+                teamlist = []
+                leaguelist = []
+                eventlist = []
                 url = '%s/%s/searchloves.php?u=%s' % (API_BASE_URL,API_KEY,str(user))
-            data = json.load(urllib2.urlopen(url))
-            loves = data["players"]
-            if loves:
-                if option == "teams":
-                    for love in loves:
-                        if love["idTeam"]:
-                            if objects:
+                data = json.load(urllib2.urlopen(url))
+                edits = data["players"]
+                if edits:
+                    for edit in edits:
+                        if edit["idTeam"]: teamlist.append(edit["idTeam"])
+                        if edit["idPlayer"]: playerlist.append(edit["idPlayer"]) 
+                        if edit["idLeague"]: leaguelist.append(edit["idLeague"])
+                        if edit["idEvent"]: eventlist.append(edit["idEvent"])
+                    if objects:
+                        _teamlist = []
+                        _playerlist = []
+                        _eventlist = []
+                        _leaguelist = []
+                        if teamlist:
+                            for tmid in teamlist:
                                 try:
-                                    lovelist.append(Api(API_KEY).Lookups().Team(id=love["idTeam"])[0])
+                                    _teamlist.append(Api(API_BASE_URL).Lookups().Team(teamid=tmid)[0])
                                 except: pass
-                            else:
-                                lovelist.append(love["idTeam"])
-                if option == "players":
-                    for love in loves:
-                        if love["idPlayer"]:
-                            if objects:
+                        teamlist = _teamlist
+                        del _teamlist
+                        if playerlist:
+                            for plid in playerlist:
                                 try:
-                                    lovelist.append(Api(API_KEY).Lookups().Team(id=love["idTeam"])[0])
+                                    _playerlist.append(Api(API_BASE_URL).Lookups().Player(playerid=plid)[0])
                                 except: pass
-                            else:
-                                lovelist.append(love["idPlayer"])
+                        playerlist = _playerlist
+                        del _playerlist
+                        if leaguelist:
+                            for lgid in leaguelist:
+                                try:
+                                    _leaguelist.append(Api(API_BASE_URL).Lookups().League(leagueid=lgid)[0])
+                                except: pass
+                        leaguelist = _leaguelist
+                        del _leaguelist
+                        if eventlist:
+                            for evid in eventlist:
+                                try:
+                                    _eventlist.append(Api(API_BASE_URL).Lookups().Event(eventid=lgid)[0])
+                                except: pass
+                        eventlist = _eventlist
+                        del _eventlist
+                userobj.setTeams(teamlist)
+                userobj.setPlayers(playerlist)
+                userobj.setLeagues(leaguelist)
+                userobj.setEvents(eventlist)
+                return userobj
             else:
-                print "A user must be provided"
-            return lovelist
+                xbmc.log(msg="[TheSportsDB] A user must be provided", level=xbmc.LOGERROR)
 
         def Seasons(self,leagueid=None):
             seasonlist = []

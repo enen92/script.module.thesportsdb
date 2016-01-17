@@ -18,25 +18,29 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
-class Tableentry:
-    def __init__(self):
-        self.name = ""
-        self.teamid = ""
-        self.played = ""
-        self.goalsfor = ""
-        self.goalsagainst = ""
-        self.goaldifference = ""
-        self.win = ""
-        self.draw = ""
-        self.loss = ""
-        self.total = ""
+class User:
+	def __init__(self):
+		self.strUsername = ""
+		self.Teams = ""
+		self.Players = ""
+		self.Leagues = ""
+		self.Events = ""
 
-    def setTeamObject(self,obj):
-        print "set team object"
-        self.Team = obj
+	def setUsername(self,user):
+		self.strUsername = user
+
+	def setTeams(self,teams):
+		self.Teams = teams
+
+	def setPlayers(self,players):
+		self.Players = players
+
+	def setLeagues(self,leagues):
+		self.Leagues = leagues
+
+	def setEvents(self,events):
+		self.Events = events
 
 
-def as_tableentry(d):
-    t = Tableentry()
-    t.__dict__.update(d)
-    return t
+
+
