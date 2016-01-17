@@ -1,0 +1,62 @@
+class Event:
+    def __init__(self):
+        self.idEvent = ""
+        self.idSoccerXML = ""
+        self.strEvent = ""
+        self.strFilename = ""
+        self.strSport = ""
+        self.idLeague = ""
+        self.strLeague = ""
+        self.strSeason = ""
+        self.strDescriptionEN = ""
+        self.strHomeTeam = ""
+        self.strAwayTeam = ""
+        self.intHomeScore = ""
+        self.intRound = ""
+        self.intAwayScore = ""
+        self.intSpectators = ""
+        self.strHomeGoalDetails = ""
+        self.strHomeRedCards = ""
+        self.strHomeYellowCards = ""
+        self.strHomeLineupGoalkeeper = ""
+        self.strHomeLineupDefense = ""
+        self.strHomeLineupMidfield = ""
+        self.strHomeLineupForward = ""
+        self.strHomeLineupSubstitutes = ""
+        self.strHomeFormation = ""
+        self.strAwayRedCards = ""
+        self.strAwayYellowCards = ""
+        self.strAwayGoalDetails = ""
+        self.strAwayLineupGoalkeeper = ""
+        self.strAwayLineupDefense = ""
+        self.strAwayLineupMidfield = ""
+        self.strAwayLineupForward = ""
+        self.strAwayLineupSubstitutes = ""
+        self.strAwayFormation = ""
+        self.intHomeShots = ""
+        self.intAwayShots = ""
+        self.dateEvent = ""
+        self.strDate = ""
+        self.strTime = ""
+        self.strTVStation = ""
+        self.idHomeTeam = ""
+        self.idAwayTeam = ""
+        self.strResult = ""
+        self.strCircuit = ""
+        self.strCountry = ""
+        self.strCity = ""
+        self.strPoster = ""
+        self.strFanart = ""
+        self.strThumb = ""
+        self.strBanner = ""
+        self.strMap = ""
+        self.strLocked = ""
+
+    def strDescription(self,language=None):
+        return self.strDescriptionEN
+
+
+def as_event(d):
+    e = Event()
+    e.__dict__.update(d)
+    return e
