@@ -21,7 +21,7 @@ class Api:
         if API_KEY != None and type(API_KEY) == str:
             xbmc.log(msg="[TheSportsDB] Module initiated with API key " + str(API_KEY), level=xbmc.LOGNOTICE)
         else:
-            xbmc.log(msg="[TheSportsDB] API Key not valid or with the wrong type", level=xbmc.LOGERROR)
+            xbmc.log(msg="[TheSportsDB] API Key is not valid", level=xbmc.LOGERROR)
 
     class Lookups:
 
@@ -274,7 +274,7 @@ class Api:
 
             def League(self,leagueid=None):
                 eventlist = []
-                if teamid:
+                if leagueid:
                     url = '%s/%s/eventspastleague.php?id=%s' % (API_BASE_URL,API_KEY,str(leagueid))
                     data = json.load(urllib2.urlopen(url))
                     events = data["events"]
@@ -282,14 +282,40 @@ class Api:
                         for event in events:
                             eventlist.append(_event.as_event(event))
                 else:
-                   xbmc.log(msg="[TheSportsDB] teamid must be provided", level=xbmc.LOGERROR)
+                   xbmc.log(msg="[TheSportsDB] leagueid must be provided", level=xbmc.LOGERROR)
                 return eventlist
 
 
         class Next:
 
-            def foo(self):
-                pass
+            def Team(self,teamid=None):
+                eventlist = []
+                if teamid:
+                    url = '%s/%s/eventsnext.php?id=%s' % (API_BASE_URL,API_KEY,str(teamid))
+                    data = json.load(urllib2.urlopen(url))
+                    events = data["results"]
+                    if events:
+                        for event in events:
+                            eventlist.append(_event.as_event(event))
+                else:
+                   xbmc.log(msg="[TheSportsDB] teamid must be provided", level=xbmc.LOGERROR)
+                return eventlist
+
+            def League(self,leagueid=None, rnd=None):
+                eventlist = []
+                if leagueid and not rnd:
+                    url = '%s/%s/eventsnextleague.php?id=%s' % (API_BASE_URL,API_KEY,str(leagueid))
+                elif leagueid and rnd:
+                    url = '%s/%s/eventsnextleague.php?id=%s&r=%s' % (API_BASE_URL,API_KEY,str(leagueid),str(rnd))                   
+                else:
+                   xbmc.log(msg="[TheSportsDB] leagueid must be provided", level=xbmc.LOGERROR)
+                   return eventlist
+                data = json.load(urllib2.urlopen(url))
+                events = data["events"]
+                if events:
+                    for event in events:
+                        eventlist.append(_event.as_event(event))     
+                return eventlist
 
 
 
