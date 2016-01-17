@@ -8,6 +8,8 @@ import event as _event
 import livescores
 import tableentry
 import xbmc
+import datetime as _datetime
+from utils import util as _util 
 
 
 __author__ = 'enen92'
@@ -317,9 +319,41 @@ class Api:
                         eventlist.append(_event.as_event(event))     
                 return eventlist
 
-
-
-
+        def Lookup(self,datestring=None,datetimedate=None,league=None,leagueid=None,season=None,rnd=None,sport=None):
+            eventlist=[]
+            if leagueid and season and rnd:
+                url = '%s/%s/eventsround.php?id=%s&r=%s&s=%s' % (API_BASE_URL,API_KEY,str(leagueid),str(rnd),str(season))
+            elif leagueid and season and not rnd:
+                url = '%s/%s/eventsseason.php?id=%s&s=%s' % (API_BASE_URL,API_KEY,str(leagueid),str(season))
+            elif datestring or datetime:
+                if datestring:
+                    if _util.CheckDateString(datestring):
+                        pass
+                    else:
+                        xbmc.log(msg="[TheSportsDB] Wrong format for the datestring. Valid format is {YYYY-MM-DD} (eg: 2014-10-10)", level=xbmc.LOGERROR)
+                        return eventlist
+                else:
+                    if _util.CheckDateTime(datetimedate):
+                        datestring = datetimedate.strftime("%Y-%m-%d")
+                    else:
+                        xbmc.log(msg="[TheSportsDB] Wrong type for datetime object. A python datetime object is required", level=xbmc.LOGERROR)
+                        return eventlist
+                if sport:
+                    url = '%s/%s/eventspastleague.php?d=%s&s=%s' % (API_BASE_URL,API_KEY,str(datestring),str(sport))
+                elif league:
+                    url = '%s/%s/eventspastleague.php?d=%s&l=%s' % (API_BASE_URL,API_KEY,str(datestring),urllib.quote(league))
+                else:
+                    xbmc.log(msg="[TheSportsDB] Wrong method invocation. sport or league is required.", level=xbmc.LOGERROR)
+                    return eventlist
+            else:
+                xbmc.log(msg="[TheSportsDB] Wrong method invocation. You need to declare either a datetimedate (datetime.date), a datestring, a leagueid, season, rnd or sport", level=xbmc.LOGERROR)
+                return eventlist
+            data = json.load(urllib2.urlopen(url))
+            events = data["events"]
+            if events:
+                for event in events:
+                    eventlist.append(_event.as_event(event))     
+            return eventlist
 
     class Livescores:
 
