@@ -23,7 +23,6 @@ class Api:
         else:
             xbmc.log(msg="[TheSportsDB] API Key not valid or with the wrong type", level=xbmc.LOGERROR)
 
-
     class Lookups:
 
         def Team(self,teamid=None,leagueid=None):
@@ -257,7 +256,40 @@ class Api:
             return seasonlist
 
 
+    class Schedules:
 
+        class Last:
+            def Team(self,teamid=None):
+                eventlist = []
+                if teamid:
+                    url = '%s/%s/eventslast.php?id=%s' % (API_BASE_URL,API_KEY,str(teamid))
+                    data = json.load(urllib2.urlopen(url))
+                    events = data["results"]
+                    if events:
+                        for event in events:
+                            eventlist.append(_event.as_event(event))
+                else:
+                   xbmc.log(msg="[TheSportsDB] teamid must be provided", level=xbmc.LOGERROR)
+                return eventlist
+
+            def League(self,leagueid=None):
+                eventlist = []
+                if teamid:
+                    url = '%s/%s/eventspastleague.php?id=%s' % (API_BASE_URL,API_KEY,str(leagueid))
+                    data = json.load(urllib2.urlopen(url))
+                    events = data["events"]
+                    if events:
+                        for event in events:
+                            eventlist.append(_event.as_event(event))
+                else:
+                   xbmc.log(msg="[TheSportsDB] teamid must be provided", level=xbmc.LOGERROR)
+                return eventlist
+
+
+        class Next:
+
+            def foo(self):
+                pass
 
 
 
