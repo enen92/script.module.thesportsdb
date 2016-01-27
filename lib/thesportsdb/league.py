@@ -62,6 +62,11 @@ class League:
         self.strLocked = ""
 
     @property
+    def AlternativeNameFirst(self):
+        if self.strLeagueAlternate: return self.strLeagueAlternate
+        else: return self.strLeague
+
+    @property
     def FanartList(self):
         fanartlist = []
         if self.strFanart1: fanartlist.append(self.strFanart1)
@@ -69,6 +74,13 @@ class League:
         if self.strFanart3: fanartlist.append(self.strFanart3)
         if self.strFanart4: fanartlist.append(self.strFanart4)
         return fanartlist
+
+    @property
+    def RandomFanart(self):
+        if self.FanartList:
+            return self.FanartList[random.randint(0,len(self.FanartList)-1)]
+        else:
+            return None
 
     @property
     def strDescription(self):

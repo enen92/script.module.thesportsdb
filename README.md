@@ -344,3 +344,51 @@ Specific module Properties
 * `PlayerFanart` - Returns the player fanart or a random fanart as fallback
 * `RandomFanart` - Returns a random fanart or None as fallback
 * `strDescription` - Returns the description of the team in the language your Kodi instalation is using. Fallback is done to English
+
+####League
+Default Properties
+* `idSoccerXML` - id of the league on soccerXML
+* `strSport` - sport of the league
+* `strLeague` - league name
+* `strLeagueAlternate` - alternative league name
+* `intFormedYear` - league formation year
+* `dateFirstEvent` - date of the first event
+* `strGender` - gender of the league
+* `strCountry` - country of the league
+* `strWebsite` - league official website
+* `strFacebook` - league facebook page
+* `strTwitter` - league twitter
+* `strYoutube` - league youtube channel
+* `strRSS` - RSS feed with league news
+* `strDescriptionEN` - league plot in English (might not be available)
+* `strDescriptionDE` - league plot in German (might not be available)
+* `strDescriptionFR` - league plot in French (might not be available)
+* `strDescriptionCN` - league plot in Chinese (might not be available)
+* `strDescriptionIT` - league plot in Italian (might not be available)
+* `strDescriptionJP` - league plot in Japanese (might not be available)
+* `strDescriptionRU` - league plot in Russian (might not be available)
+* `strDescriptionES` - league plot in Spanish (might not be available)
+* `strDescriptionPT` - league plot in Portuguese (might not be available)
+* `strDescriptionSE` - league plot in Swedish (might not be available)
+* `strDescriptionNL` - league plot in Dutch (might not be available)
+* `strDescriptionHU` - league plot in Hungarian (might not be available)
+* `strDescriptionNO` - league plot in Norwegian (might not be available)
+* `strDescriptionIL` - league plot in Hebrew (might not be available)
+* `strDescriptionPL` - league plot in Polish (might not be available)
+* `strFanart1` - fanart 1 of the league
+* `strFanart2` - fanart 1 of the league
+* `strFanart3` - fanart 1 of the league
+* `strFanart4` - fanart 1 of the league
+* `strBanner - league banner
+* `strBadge - league badge (logo)
+* `strLogo - league logo clearart
+* `strPoster - league poster
+* `strTrophy - league trophy clearart
+* `strNaming - league naming
+
+Specific module Properties
+* `AlternativeNameFirst` - Returns the alternative name of the team first and the default team name as fallback
+* `FanartList` - Returns a python list containing all fanarts
+* `RandomFanart` - Returns a random fanart or None as fallback
+* `strDescription` - Returns the description of the team in the language your Kodi instalation is using. Fallback is done to English
+
