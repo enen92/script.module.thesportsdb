@@ -406,4 +406,18 @@ class Api:
                     except: pass
             return eventlist
 
+    class Image:
+
+        def Preview(self,image):
+            if (image.startswith("http://www.thesportsdb.com/images/") and image.endswith(".png")) or (image.startswith("http://www.thesportsdb.com/images/") and image.endswith(".jpg")):
+                return image + "/preview"
+            else:
+                return None
+
+        def Original(self,image):
+            if (image.startswith("http://www.thesportsdb.com/images/") and image.endswith(".png")) or (image.startswith("http://www.thesportsdb.com/images/") and image.endswith(".jpg")):
+                return image
+            else:
+                return None
+
 

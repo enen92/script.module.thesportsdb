@@ -268,3 +268,17 @@ events = api.Schedules().Lookup(leagueid=4328,rnd=38,season=1415)
 ```python
 events = api.Schedules().Lookup(leagueid=4328,season=1415)
 ```
+
+####Images
+TheSportsDB provides a way of getting a preview of the image. The same can be done in this module using `api.Image().Preview(image)`. A full example is below:
+```python
+import thesportsdb
+api = thesportsdb.Api(key="1")
+team = api.Lookups().Team(teamid=134108)[0]
+print(team.strTeamFanart4)
+print(api.Image().Preview(team.strTeamFanart4))
+print(api.Image().Original(team.strTeamFanart4))
+>>http://www.thesportsdb.com/images/media/team/fanart/wqywqq1421075962.jpg
+>>http://www.thesportsdb.com/images/media/team/fanart/wqywqq1421075962.jpg/preview
+>>http://www.thesportsdb.com/images/media/team/fanart/wqywqq1421075962.jpg
+```
