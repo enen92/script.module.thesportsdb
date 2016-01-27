@@ -35,7 +35,89 @@ for player in players:
 teams = api.Search().Teams(team="Arsenal")
 ```
 
-*Search for all teams in a League - (returns a list of team objects)
+* Search for all teams in a League - (returns a list of team objects)
 ```python
 teams = api.Search().Teams(league="English Premier League")
 ```
+
+* Search for all Teams in a sport by country - (returns a list of team objects)
+```python
+teams = api.Search().Teams(sport="Soccer",country="England")
+```
+
+* Search for all players from a team - (returns a list of player objects)
+```python
+players = api.Search().Players(team="Arsenal")
+```
+
+* Search for players by name - (returns a list of player objects)
+```python
+players = api.Search().Players(player="Danny Welbeck")
+```
+
+* Search for players by team and name - (returns a list of player objects)
+```python
+players = api.Search().Players(team="Arsenal",player="Danny Welbeck")
+```
+
+* Search for events by event name - (returns a list of event objects)
+```python
+events = api.Search().Events(event="Arsenal vs Chelsea")
+```
+
+* Search for events by filename - (returns a list of event objects)
+```python
+events = api.Search().Events(filename="English_Premier_League_2015-04-26_Arsenal_vs_Chelsea")
+```
+
+* Search for event by event name and season - (returns a list of event objects)
+```python
+events = api.Search().Events(event="Arsenal vs Chelsea",season=1415)
+```
+
+* Search for all Leagues in a country - (returns a list of league objects)
+```python
+leagues = api.Search().Leagues(country="England")
+```
+
+* Search for all Leagues by sport - (returns a list of league objects)
+```python
+leagues = api.Search().Leagues(sport="Soccer")
+```
+
+* Search for all Leagues in a country and by sport - (returns a list of league objects)
+```python
+leagues = api.Search().Leagues(country="England",sport="Soccer")
+```
+
+* Search for all Seasons in a League provided the league id - (returns a list of strings each one identifying a season)
+```python
+seasons = api.Search().Seasons(leagueid=4328)
+```
+
+* Search for all the users loved items - (returns single user object. Properties (Players,Events,Teams) are lists of id's - faster/need further lookup)
+```python
+loves = api.Search().Loves(user="zag")
+```
+
+* Search for all the users loved items - (returns single user object. Properties (Players,Events,Teams) are lists of objects - slower/returns the object itself)
+```python
+loves = api.Search().Loves(user="zag",objects=True)
+```
+
+A more detailed example using user loves:
+```python
+import thesportsdb
+api = thesportsdb.Api("1")
+userloves = api.Search().Loves(user="zag")
+print userloves.Teams, userloves.Players, userloves.Events
+>> [u'133632', u'133597',....
+
+import thesportsdb
+api = thesportsdb.Api("1")
+userloves = api.Search().Loves(user="zag",objects=True)
+print userloves.Teams, userloves.Players, userloves.Events
+>> [<thesportsdb.team.Team instance at 0x129d4d200>, <thesportsdb.team.Team instance at 0x11e1ba5f0>,....
+```
+
+
