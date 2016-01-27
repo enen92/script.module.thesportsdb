@@ -376,9 +376,9 @@ Default Properties
 * `strDescriptionIL` - league plot in Hebrew (might not be available)
 * `strDescriptionPL` - league plot in Polish (might not be available)
 * `strFanart1` - fanart 1 of the league
-* `strFanart2` - fanart 1 of the league
-* `strFanart3` - fanart 1 of the league
-* `strFanart4` - fanart 1 of the league
+* `strFanart2` - fanart 2 of the league
+* `strFanart3` - fanart 3 of the league
+* `strFanart4` - fanart 4 of the league
 * `strBanner - league banner
 * `strBadge - league badge (logo)
 * `strLogo - league logo clearart
