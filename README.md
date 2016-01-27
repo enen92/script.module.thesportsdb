@@ -95,12 +95,12 @@ leagues = api.Search().Leagues(country="England",sport="Soccer")
 seasons = api.Search().Seasons(leagueid=4328)
 ```
 
-* Search for all the users loved items - (returns single user object. Properties (Players,Events,Teams) are lists of id's - faster/need further lookup)
+* Search for all the user loved items - (returns single user object. Properties (Players,Events,Teams) are lists of id's - faster/need further lookup)
 ```python
 loves = api.Search().Loves(user="zag")
 ```
 
-* Search for all the users loved items - (returns single user object. Properties (Players,Events,Teams) are lists of objects - slower/returns the object itself)
+* Search for all the user loved items - (returns single user object. Properties (Players,Events,Teams) are lists of objects - slower/returns the object itself)
 ```python
 loves = api.Search().Loves(user="zag",objects=True)
 ```
@@ -118,4 +118,68 @@ print(userloves.Teams, userloves.Players, userloves.Events)
 >> [<thesportsdb.team.Team instance at 0x129d4d200>, <thesportsdb.team.Team instance at 0x11e1ba5f0>,....
 ```
 
+####Lookups
+* Provides League Details given the leagueid (returns a list of league objects)
+```python
+leagues = api.Lookups().League(leagueid=4346)
+```
+
+* League seasons by leagueid (returns a list of seasonid strings)
+```python
+seasons = api.Lookups().Seasons(leagueid=4346)
+```
+* Provides Team Details given the teamid (returns a list of team objects)
+```python
+teams = api.Lookups().Team(teamid=133604)
+```
+
+* All teams in a league provided the leagueid (returns a list of team objects)
+```python
+teams = api.Lookups().Team(leagueid=4346)
+```
+
+* Provides Player Details given the playerid (returns a list of player objects)
+```python
+players = api.Lookups().Player(playerid=34145937)
+```
+
+* All players in a team by teamid (returns a list of player objects)
+```python
+players = api.Lookups().Player(teamid=133604)
+```
+
+* Provides Event Details given the eventid (returns a list of event objects)
+```python
+events = api.Lookups().Event(eventid=441613)
+```
+
+* Lookup Table by League ID and Season (returns a list of tableentry objects without team objects)
+```python
+table = api.Lookups().Table(leagueid=4346)
+```
+
+* Lookup Table by League ID and Season (returns a list of tableentry objects each one containing a team object as Team property)
+```python
+table = api.Lookups().Table(leagueid=4346,objects=True)
+```
+
+A more detailed example using League Tables:
+```python
+import thesportsdb
+api = thesportsdb.Api("1")
+table = api.Lookups().Table(leagueid=4346)
+if table:
+	print(table[0].name,table[0].Team)
+
+>> FC Dallas
+>>
+
+table = api.Lookups().Table(leagueid=4346,objects=True)
+if table:
+	print(table[0].name,table[0].Team, table[0].Team.strTeamBadge)
+
+>> FC Dallas
+>> <thesportsdb.team.Team instance at 0x12768ab80>
+>> http://www.thesportsdb.com/images/media/team/badge/xvrwus1420778297.png
+```
 
