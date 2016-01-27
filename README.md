@@ -286,3 +286,61 @@ print(api.Image().Original(team.strTeamFanart4))
 ###Objects
 
 ####Team
+Default Properties
+`idTeam` - id of the team in thesportsdb
+`idSoccerXML` - id of the team in soccerXML
+`intLoved` - number of thesportsdb users that love the team
+`strTeam` - team name
+`strTeamShort` - short team name
+`strAlternate` - team alternative name
+`intFormedYear` - year of foundation
+`strSport` - sport the team is associated with
+`strLeague` - league in which the team is participating
+`idLeague` - the id of the league of the team
+`strDivision` - division of the league 
+`strManager` - team manager name
+`strStadium` - name of the team's stadium
+`strKeywords` - keywords to help identifying the team
+`strRSS` - RSS url for team news
+`strStadiumThumb` - thumbnail of the stadium
+`strStadiumDescription` - stadium description
+`strStadiumLocation` - location of the stadium
+`strWebsite` - official website of the team
+`strFacebook` - official facebook page of the team
+`strTwitter` - official team's twitter page
+`strInstagram` - official team's instagram page
+`strYoutube` - official team's youtube page
+`strDescriptionEN` - team plot in English (might not be available)
+`strDescriptionDE` - team plot in German (might not be available)
+`strDescriptionFR` - team plot in French (might not be available)
+`strDescriptionCN` - team plot in Chinese (might not be available)
+`strDescriptionIT` - team plot in Italian (might not be available)
+`strDescriptionJP` - team plot in Japanese (might not be available)
+`strDescriptionRU` - team plot in Russian (might not be available)
+`strDescriptionES` - team plot in Spanish (might not be available)
+`strDescriptionPT` - team plot in Portuguese (might not be available)
+`strDescriptionSE` - team plot in Swedish (might not be available)
+`strDescriptionNL` - team plot in Dutch (might not be available)
+`strDescriptionHU` - team plot in Hungarian (might not be available)
+`strDescriptionNO` - team plot in Norwegian (might not be available)
+`strDescriptionIL` - team plot in Hebrew (might not be available)
+`strDescriptionPL` - team plot in Polish (might not be available)
+`strGender` - team gender
+`strCountry` - country of the team
+`strTeamBadge` - team badge (logo)
+`strTeamJersey` - team jersey clearart
+`strTeamLogo` - team logo clearart
+`strTeamFanart1` - team fanart 1 (general)
+`strTeamFanart2` - team fanart 2 (general)
+`strTeamFanart3` - team fanart 3 (team)
+`strTeamFanart4` - team fanart 4 (players)
+`strTeamBanner` - team banner
+
+Specific module Properties
+
+`AlternativeNameFirst` - Returns the alternative name of the team first and the default team name as fallback
+`FanartList` - Returns a python list containing all fanarts
+`FanFanart` - Returns the fans fanart(3) or a random fanart as fallback
+`PlayerFanart` - Returns the player fanart or a random fanart as fallback
+`RandomFanart` - Returns a random fanart or None as fallback
+`strDescription` - Returns the description of the team in the language your Kodi instalation is using. Fallback is done to English

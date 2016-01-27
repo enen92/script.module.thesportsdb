@@ -73,6 +73,11 @@ class Team:
         self.strLocked = ""
 
     @property
+    def AlternativeNameFirst(self):
+        if self.strAlternate: return self.strAlternate
+        else: return self.strTeam
+
+    @property
     def FanartList(self):
         fanartlist = []
         if self.strTeamFanart1: fanartlist.append(self.strTeamFanart1)
