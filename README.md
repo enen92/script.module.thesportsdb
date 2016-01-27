@@ -204,3 +204,67 @@ if matches:
 	for match in matches:
 		print("HomeTeam: %s HomeTeamLogo: %s %s:%s AwayTeam: %s AwayTeamLogo: %s" % (match.HomeTeam,match.HomeTeamObj.strTeamBadge,match.HomeGoals,match.AwayGoals,match.AwayTeam,match.AwayTeamObj.strTeamBadge))
 ```
+
+####Schedules
+
+* Next 5 Events by Team Id (returns a list of Event Objects)
+```python
+events = api.Schedules().Next().Team(teamid=133602)
+```
+
+* Next 15 Events by League Id (returns a list of Event Objects)
+```python
+events = api.Schedules().Next().League(leagueid=4328)
+```
+
+* Next 15 Events by League Id and Round (returns a list of Event Objects)
+```python
+events = api.Schedules().Next().League(leagueid=4328,rnd=38)
+```
+
+* Last 5 Events by Team Id (returns a list of Event Objects)
+```python
+events = api.Schedules().Last().Team(teamid=133602)
+```
+
+* Last 15 Events by League Id (returns a list of Event Objects)
+```python
+events = api.Schedules().Last().League(leagueid=4328)
+```
+
+* Events on a specific day provided a date string (returns a list of Event Objects)
+```python
+events = api.Schedules().Lookup(datestring="2014-10-10")
+```
+
+* Events on a specific day provided a datetime object (returns a list of Event Objects)
+```python
+import datetime
+events = api.Schedules().Lookup(datetimedate=datetime.date(year=2014, month=10, day=10))
+```
+
+* Events on a specific day by sport provided a date string or a datetime.date object (returns a list of Event Objects)
+```python
+events = api.Schedules().Lookup(datestring="2014-10-10",sport="soccer")
+```
+```python
+events = api.Schedules().Lookup(datetimedate=datetime.date(year=2014, month=10, day=10),sport="soccer")
+```
+
+* Events on a specific day by league provided a date string or a datetime.date object (returns a list of Event Objects)
+```python
+events = api.Schedules().Lookup(datestring="2014-10-10",league="Australian A-League")
+```
+```python
+events = api.Schedules().Lookup(datetimedate=datetime.date(year=2014, month=10, day=10),league="Australian A-League")
+```
+
+* Events in specific round of a league by season (returns a list of Event Objects)
+```python
+events = api.Schedules().Lookup(leagueid=4328,rnd=38,season=1415)
+```
+
+* All events in specific league by season
+```python
+events = api.Schedules().Lookup(leagueid=4328,season=1415)
+```
