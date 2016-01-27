@@ -446,3 +446,23 @@ Specific module Properties
 * `RandomFanart` - Returns a random fanart or None as fallback
 * `dateBornAsDatetime` - Returns the birth date of the player as a datetime.date object
 * `dateSignedAsDatetime` - Returns the signing date of the player as a python datetime.date object
+
+####Table entry
+* `name` - name of the team
+* `teamid` - id of the team on thesportsdb 
+* `played` - number of played matches
+* `goalsfor` - number of goals scored
+* `goalsagainst` - number of goals suffered
+* `goaldifference` - goal difference
+* `win` - number of wins
+* `draw` - number of draws
+* `loss` - number of losses
+* `total` - number of points
+* `Team` - a team object (defined if objects=True). All the other team properties are available
+
+####User
+* `strUsername ` - the user username
+* `Teams ` - a list of teamids for the teams the user loves (or team objects if objects=True)
+* `Players ` - a list of playerids for the players the user loves (or player objects if objects=True)
+* `Leagues ` - a list of leagueids for the leagues the user loves (or league objects if objects=True)
+* `Events ` - a list of eventids for the events the user loves (or event objects if objects=True)
