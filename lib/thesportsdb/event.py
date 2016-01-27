@@ -17,6 +17,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
+import datetime
 
 class Event:
     def __init__(self):
@@ -72,8 +73,28 @@ class Event:
         self.strMap = ""
         self.strLocked = ""
 
-    def strDescription(self,language=None):
+    @property
+    def strDescription(self):
         return self.strDescriptionEN
+
+    @property
+    def eventDateTime(self):
+        try:
+            datelist = self.dateEvent.split("-")
+            year = int(datelist[0])
+            month = int(datelist[1])
+            day = int(datelist[2])
+            if self.strTime:
+                timelist = self.strTime.split("+")[0].split(":")
+                hour = int(timelist[0])
+                minute = int(timelist[1])
+                seconds = int(timelist[2])
+            else:
+                hour = 0
+                minute = 0
+                hour = 0
+            return datetime.datetime(year=year,month=month,day=day,hour=hour,minute=minute,second=seconds)
+        except: return None
 
 def as_event(d):
     e = Event()

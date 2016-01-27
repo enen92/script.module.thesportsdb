@@ -64,9 +64,6 @@ class Livescore:
     def setAwayTeamObj(self,img):
         self.AwayTeamObj = img
 
-    def getDatetime(self):
-        hour = self.Date.split("T")[1].split("+")[0]
-        print hour
 
 def as_event(d):
     e = Livescore()
