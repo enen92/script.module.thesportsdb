@@ -108,7 +108,7 @@ loves = api.Search().Loves(user="zag",objects=True)
 A more detailed example using user loves:
 ```python
 import thesportsdb
-api = thesportsdb.Api("1")
+api = thesportsdb.Api(key="1")
 userloves = api.Search().Loves(user="zag")
 print(userloves.Teams, userloves.Players, userloves.Events)
 >> [u'133632', u'133597',....
@@ -166,7 +166,7 @@ table = api.Lookups().Table(leagueid=4346,objects=True)
 A more detailed example using League Tables:
 ```python
 import thesportsdb
-api = thesportsdb.Api("1")
+api = thesportsdb.Api(key="1")
 table = api.Lookups().Table(leagueid=4346)
 if table:
 	print(table[0].name,table[0].Team)
@@ -183,3 +183,24 @@ if table:
 >> http://www.thesportsdb.com/images/media/team/badge/xvrwus1420778297.png
 ```
 
+####Livescores
+
+* Soccer Livescores (returns a list of Livescores objects - no Team objects defined)
+```python
+matches = api.Livescores().Soccer()
+```
+
+* Soccer Livescores (returns a list of Livescores objects - Team objects defined)
+```python
+matches = api.Livescores().Soccer(objects=True)
+```
+
+A full example using Soccer livescores:
+```python
+import thesportsdb
+api = thesportsdb.Api(key="1")
+matches = api.Livescores().Soccer(objects=True)
+if matches:
+	for match in matches:
+		print("HomeTeam: %s HomeTeamLogo: %s %s:%s AwayTeam: %s AwayTeamLogo: %s" % (match.HomeTeam,match.HomeTeamObj.strTeamBadge,match.HomeGoals,match.AwayGoals,match.AwayTeam,match.AwayTeamObj.strTeamBadge))
+```
