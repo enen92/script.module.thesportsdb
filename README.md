@@ -1,7 +1,7 @@
 # script.module.thesportsdb
 ![TheSportsDb Icon](http://s17.postimg.org/h3eanic3z/icon.png)
 
-A python module packaged as a Kodi script module to wrap all thesportsdb API methods for you to use on your own addon
+A python module packaged as a Kodi script module to wrap all thesportsdb API methods and for you to use on your own addon
 
 *Work/documentation in progress.....
 
@@ -15,7 +15,7 @@ The module most be imported in the addon.xml of your addon and pointing to the c
 
 ###Pythonic usage
 
-The module follows the api structure described here [Here](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=5). Every group method (Search,Lookups,Schedules,Livescores) is a Python class and all the endpoints (eg: lookupleague) is part of a class method. The module maps the json data to objects as much as possible, so each call returns one or more Team objects, League objects, Player objects, Livescores objects, Table objects, etc.
+The module follows the API structure described [Here](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=5). Every group method (Search,Lookups,Schedules,Livescores) is a Python class and all the endpoints (eg: lookupleague) is part of a class method. The module maps the json data to objects as much as possible, so each call returns one or more Team objects, League objects, Player objects, Livescores objects, Table objects, etc.
 
 ###A really simple usage example...
 
@@ -110,13 +110,11 @@ A more detailed example using user loves:
 import thesportsdb
 api = thesportsdb.Api("1")
 userloves = api.Search().Loves(user="zag")
-print userloves.Teams, userloves.Players, userloves.Events
+print(userloves.Teams, userloves.Players, userloves.Events)
 >> [u'133632', u'133597',....
 
-import thesportsdb
-api = thesportsdb.Api("1")
 userloves = api.Search().Loves(user="zag",objects=True)
-print userloves.Teams, userloves.Players, userloves.Events
+print(userloves.Teams, userloves.Players, userloves.Events)
 >> [<thesportsdb.team.Team instance at 0x129d4d200>, <thesportsdb.team.Team instance at 0x11e1ba5f0>,....
 ```
 
