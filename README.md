@@ -392,3 +392,57 @@ Specific module Properties
 * `RandomFanart` - Returns a random fanart or None as fallback
 * `strDescription` - Returns the description of the team in the language your Kodi instalation is using. Fallback is done to English
 
+####Player
+Default Properties
+* `idPlayer` - player id on thesportsdb
+* `idTeam` - team id on thesportsdb
+* `idSoccerXML` - player id on soccerXML
+* `idPlayerManager` - manager id 
+* `strNationality` - player nationality
+* `strPlayer` - player's name
+* `strTeam` - player's team name
+* `strSport` - player's sport
+* `intSoccerXMLTeamID` - team id on soccerXML
+* `dateBorn` - birth date of the player
+* `dateSigned` - sign date of the player
+* `strSigning` - signing value for the player
+* `strWage` - wage of the player (month)
+* `strDescriptionEN` - player plot in English (might not be available)
+* `strDescriptionDE` - player plot in German (might not be available)
+* `strDescriptionFR` - player plot in French (might not be available)
+* `strDescriptionCN` - player plot in Chinese (might not be available)
+* `strDescriptionIT` - player plot in Italian (might not be available)
+* `strDescriptionJP` - player plot in Japanese (might not be available)
+* `strDescriptionRU` - player plot in Russian (might not be available)
+* `strDescriptionES` - player plot in Spanish (might not be available)
+* `strDescriptionPT` - player plot in Portuguese (might not be available)
+* `strDescriptionSE` - player plot in Swedish (might not be available)
+* `strDescriptionNL` - player plot in Dutch (might not be available)
+* `strDescriptionHU` - player plot in Hungarian (might not be available)
+* `strDescriptionNO` - player plot in Norwegian (might not be available)
+* `strDescriptionIL` - player plot in Hebrew (might not be available)
+* `strDescriptionPL` - player plot in Polish (might not be available)
+* `strGender` - gender of the player
+* `strPosition` - position of the player
+* `strCollege` - college of the player
+* `strFacebook` - player's official facebook page
+* `strWebsite` - player's official website
+* `strTwitter` - player's official twitter page
+* `strInstagram` - player's official instagram page
+* `strYoutube` - player's official youtube page
+* `strHeight` - player's height
+* `strWeight` - player's weight
+* `intLoved` - number of users which love the player on thesportsdb
+* `strThumb` - player's thumb
+* `strCutout` - player's cutout (clearart)
+* `strFanart1` - player fanart 1
+* `strFanart2` - player fanart 2
+* `strFanart3` - player fanart 3
+* `strFanart4` - player fanart 4
+
+Specific module Properties
+* `strDescription` - Returns the description of the team in the language your Kodi instalation is using. Fallback is done to English
+* `FanartList` - Returns a python list containing all fanarts
+* `RandomFanart` - Returns a random fanart or None as fallback
+* `dateBornAsDatetime` - Returns the birth date of the player as a datetime.date object
+* `dateSignedAsDatetime` - Returns the signing date of the player as a python datetime.date object

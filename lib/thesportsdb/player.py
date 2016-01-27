@@ -18,6 +18,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
+import random
+import datetime
+
 class Player:
     def __init__(self):
         self.idPlayer = ""
@@ -77,6 +80,27 @@ class Player:
         if self.strFanart3: fanartlist.append(self.strFanart3)
         if self.strFanart4: fanartlist.append(self.strFanart4)
         return fanartlist
+
+    @property
+    def RandomFanart(self):
+        if self.FanartList:
+            return self.FanartList[random.randint(0,len(self.FanartList)-1)]
+        else:
+            return None
+
+    @property
+    def dateBornAsDatetime(self):
+        if self.dateBorn:
+            return datetime.datetime.strptime(self.dateBorn, "%Y-%m-%d").date()
+        else:
+            return None
+
+    @property
+    def dateSignedAsDatetime(self):
+        if self.dateSigned:
+            return datetime.datetime.strptime(self.dateSigned, "%Y-%m-%d").date()
+        else:
+            return None
 
     @property
     def strDescription(self):
