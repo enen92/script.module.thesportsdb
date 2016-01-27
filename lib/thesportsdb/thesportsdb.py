@@ -84,7 +84,7 @@ class Api:
         def Event(self,eventid=None):
             eventlist = []
             if eventid:
-                url = '%s/%s/lookuevent.php?id=%s' % (API_BASE_URL,API_KEY,str(eventid))
+                url = '%s/%s/lookupevent.php?id=%s' % (API_BASE_URL,API_KEY,str(eventid))
                 data = json.load(urllib2.urlopen(url))
                 events = data["events"]
                 if events:

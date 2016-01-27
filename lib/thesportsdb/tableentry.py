@@ -30,9 +30,9 @@ class Tableentry:
         self.draw = ""
         self.loss = ""
         self.total = ""
+        self.Team = ""
 
     def setTeamObject(self,obj):
-        print "set team object"
         self.Team = obj
 
 
