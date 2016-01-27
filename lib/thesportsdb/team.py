@@ -18,6 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 import xbmc
+import random
 
 class Team:
     def __init__(self):
@@ -79,6 +80,23 @@ class Team:
         if self.strTeamFanart3: fanartlist.append(self.strTeamFanart3)
         if self.strTeamFanart4: fanartlist.append(self.strTeamFanart4)
         return fanartlist
+
+    @property
+    def FanFanart(self):
+        if self.strTeamFanart4: return self.strTeamFanart4
+        else: return self.RandomFanart
+
+    @property
+    def PlayerFanart(self):
+        if self.strTeamFanart3: return self.strTeamFanart3
+        else: return self.RandomFanart
+
+    @property
+    def RandomFanart(self):
+        if self.FanartList:
+            return self.FanartList[random.randint(0,len(self.FanartList)-1)]
+        else:
+            return None
 
     @property
     def strDescription(self):
