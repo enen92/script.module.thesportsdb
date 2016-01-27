@@ -17,6 +17,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
+import xbmc
 
 class Team:
     def __init__(self):
@@ -79,10 +80,39 @@ class Team:
         if self.strTeamFanart4: fanartlist.append(self.strTeamFanart4)
         return fanartlist
 
-    def strDescription(self,language):
-        if self.strDescriptionPT: return self.strDescriptionPT
-        else: return self.strDescriptionEN
-
+    @property
+    def strDescription(self):
+        description = self.strDescriptionEN
+        xbmcLanguage = xbmc.getInfoLabel("System.Language")
+        if "portuguese" in xbmcLanguage.lower():
+            if self.strDescriptionPT: description = self.strDescriptionPT
+        elif "german" in xbmcLanguage.lower():
+            if self.strDescriptionDE: description = self.strDescriptionDE
+        elif "french" in xbmcLanguage.lower():
+            if self.strDescriptionFR: description = self.strDescriptionFR
+        elif "chinese" in xbmcLanguage.lower():
+            if self.strDescriptionCN: description = self.strDescriptionCN
+        elif "italian" in xbmcLanguage.lower():
+            if self.strDescriptionIT: description = self.strDescriptionIT
+        elif "japanese" in xbmcLanguage.lower():
+            if self.strDescriptionJP: description = self.strDescriptionJP
+        elif "russian" in xbmcLanguage.lower():
+            if self.strDescriptionRU: description = self.strDescriptionRU
+        elif "spanish" in xbmcLanguage.lower():
+            if self.strDescriptionES: description = self.strDescriptionES
+        elif "swedish" in xbmcLanguage.lower():
+            if self.strDescriptionSE: description = self.strDescriptionSE
+        elif "dutch" in xbmcLanguage.lower():
+            if self.strDescriptionNL: description = self.strDescriptionNL
+        elif "hungarian" in xbmcLanguage.lower():
+            if self.strDescriptionHU: description = self.strDescriptionHU
+        elif "norwegian" in xbmcLanguage.lower():
+            if self.strDescriptionNO: description = self.strDescriptionNO
+        elif "hebrew" in xbmcLanguage.lower():
+            if self.strDescriptionIL: description = self.strDescriptionIL
+        elif "polish" in xbmcLanguage.lower():
+            if self.strDescriptionPL: description = self.strDescriptionPL
+        return description
 
 def as_team(d):
     t = Team()

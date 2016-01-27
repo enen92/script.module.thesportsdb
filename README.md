@@ -259,12 +259,12 @@ events = api.Schedules().Lookup(datestring="2014-10-10",league="Australian A-Lea
 events = api.Schedules().Lookup(datetimedate=datetime.date(year=2014, month=10, day=10),league="Australian A-League")
 ```
 
-* Events in specific round of a league by season (returns a list of Event Objects)
+* Events in a specific round of a league by season (returns a list of Event Objects)
 ```python
 events = api.Schedules().Lookup(leagueid=4328,rnd=38,season=1415)
 ```
 
-* All events in specific league by season
+* All events in a specific league by season
 ```python
 events = api.Schedules().Lookup(leagueid=4328,season=1415)
 ```
@@ -282,3 +282,7 @@ print(api.Image().Original(team.strTeamFanart4))
 >>http://www.thesportsdb.com/images/media/team/fanart/wqywqq1421075962.jpg/preview
 >>http://www.thesportsdb.com/images/media/team/fanart/wqywqq1421075962.jpg
 ```
+
+###Objects
+
+####Team

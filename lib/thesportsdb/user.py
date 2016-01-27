@@ -40,7 +40,3 @@ class User:
 
 	def setEvents(self,events):
 		self.Events = events
-
-
-
-

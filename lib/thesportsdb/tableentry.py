@@ -35,7 +35,6 @@ class Tableentry:
     def setTeamObject(self,obj):
         self.Team = obj
 
-
 def as_tableentry(d):
     t = Tableentry()
     t.__dict__.update(d)

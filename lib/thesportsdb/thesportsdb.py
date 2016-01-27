@@ -419,5 +419,3 @@ class Api:
                 return image
             else:
                 return None
-
-

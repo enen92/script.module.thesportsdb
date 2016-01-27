@@ -75,7 +75,6 @@ class Event:
     def strDescription(self,language=None):
         return self.strDescriptionEN
 
-
 def as_event(d):
     e = Event()
     e.__dict__.update(d)
