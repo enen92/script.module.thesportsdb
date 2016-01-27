@@ -64,7 +64,7 @@ class Api:
             playerlist = []
             if playerid or teamid:
                 if playerid and not teamid:
-                    url = '%s/%s/lookuplayer.php?id=%s' % (API_BASE_URL,API_KEY,str(playerid))
+                    url = '%s/%s/lookupplayer.php?id=%s' % (API_BASE_URL,API_KEY,str(playerid))
                     key = "players"
                 elif teamid and not playerid:
                     url = '%s/%s/lookup_all_players.php?id=%s' % (API_BASE_URL,API_KEY,str(teamid))
@@ -147,6 +147,7 @@ class Api:
                 else:
                     url = None
                 if url:
+                    data = json.load(urllib2.urlopen(url))
                     teams = data["teams"]
                     if teams:
                         for tm in teams:
@@ -155,7 +156,7 @@ class Api:
                     xbmc.log(msg="[TheSportsDB] Invalid Parameters", level=xbmc.LOGERROR)
             else:
                 xbmc.log(msg="[TheSportsDB] team,sport,country or league must be provided", level=xbmc.LOGERROR)
-            return playerlist
+            return teamlist
 
         def Players(self,team=None,player=None):
             playerlist = []
@@ -201,7 +202,7 @@ class Api:
             if country or sport:
                 if country and not sport:
                     url = '%s/%s/search_all_leagues.php?c=%s' % (API_BASE_URL,API_KEY,urllib.quote(country))
-                if not country and sport:
+                elif not country and sport:
                     url = '%s/%s/search_all_leagues.php?s=%s' % (API_BASE_URL,API_KEY,urllib.quote(sport))
                 else:
                     url = '%s/%s/search_all_leagues.php?s=%s&c=%s' % (API_BASE_URL,API_KEY,urllib.quote(sport),urllib.quote(country))
@@ -239,28 +240,28 @@ class Api:
                         if teamlist:
                             for tmid in teamlist:
                                 try:
-                                    _teamlist.append(Api(API_BASE_URL).Lookups().Team(teamid=tmid)[0])
+                                    _teamlist.append(Api(API_KEY).Lookups().Team(teamid=tmid)[0])
                                 except: pass
                         teamlist = _teamlist
                         del _teamlist
                         if playerlist:
                             for plid in playerlist:
                                 try:
-                                    _playerlist.append(Api(API_BASE_URL).Lookups().Player(playerid=plid)[0])
+                                    _playerlist.append(Api(API_KEY).Lookups().Player(playerid=plid)[0])
                                 except: pass
                         playerlist = _playerlist
                         del _playerlist
                         if leaguelist:
                             for lgid in leaguelist:
                                 try:
-                                    _leaguelist.append(Api(API_BASE_URL).Lookups().League(leagueid=lgid)[0])
+                                    _leaguelist.append(Api(API_KEY).Lookups().League(leagueid=lgid)[0])
                                 except: pass
                         leaguelist = _leaguelist
                         del _leaguelist
                         if eventlist:
                             for evid in eventlist:
                                 try:
-                                    _eventlist.append(Api(API_BASE_URL).Lookups().Event(eventid=lgid)[0])
+                                    _eventlist.append(Api(API_KEY).Lookups().Event(eventid=lgid)[0])
                                 except: pass
                         eventlist = _eventlist
                         del _eventlist
@@ -274,7 +275,7 @@ class Api:
 
         def Seasons(self,leagueid=None):
             seasonlist = []
-            if not leagueid:
+            if leagueid:
                 url = '%s/%s/search_all_seasons.php?id=%s' % (API_BASE_URL,API_KEY,str(leagueid))
                 data = json.load(urllib2.urlopen(url))
                 seasons = data["seasons"]
