@@ -324,7 +324,7 @@ class Api:
                 if teamid:
                     url = '%s/%s/eventsnext.php?id=%s' % (API_BASE_URL,API_KEY,str(teamid))
                     data = json.load(urllib2.urlopen(url))
-                    events = data["results"]
+                    events = data["events"]
                     if events:
                         for event in events:
                             eventlist.append(_event.as_event(event))
@@ -354,7 +354,7 @@ class Api:
                 url = '%s/%s/eventsround.php?id=%s&r=%s&s=%s' % (API_BASE_URL,API_KEY,str(leagueid),str(rnd),str(season))
             elif leagueid and season and not rnd:
                 url = '%s/%s/eventsseason.php?id=%s&s=%s' % (API_BASE_URL,API_KEY,str(leagueid),str(season))
-            elif datestring or datetime:
+            elif datestring or datetimedate:
                 if datestring:
                     if _util.CheckDateString(datestring):
                         pass
@@ -368,12 +368,11 @@ class Api:
                         xbmc.log(msg="[TheSportsDB] Wrong type for datetime object. A python datetime object is required", level=xbmc.LOGERROR)
                         return eventlist
                 if sport:
-                    url = '%s/%s/eventspastleague.php?d=%s&s=%s' % (API_BASE_URL,API_KEY,str(datestring),str(sport))
+                    url = '%s/%s/eventsday.php?d=%s&s=%s' % (API_BASE_URL,API_KEY,str(datestring),str(sport))
                 elif league:
-                    url = '%s/%s/eventspastleague.php?d=%s&l=%s' % (API_BASE_URL,API_KEY,str(datestring),urllib.quote(league))
+                    url = '%s/%s/eventsday.php?d=%s&l=%s' % (API_BASE_URL,API_KEY,str(datestring),urllib.quote(league))
                 else:
-                    xbmc.log(msg="[TheSportsDB] Wrong method invocation. sport or league is required.", level=xbmc.LOGERROR)
-                    return eventlist
+                    url = '%s/%s/eventsday.php?d=%s' % (API_BASE_URL,API_KEY,str(datestring))
             else:
                 xbmc.log(msg="[TheSportsDB] Wrong method invocation. You need to declare either a datetimedate (datetime.date), a datestring, a leagueid, season, rnd or sport", level=xbmc.LOGERROR)
                 return eventlist

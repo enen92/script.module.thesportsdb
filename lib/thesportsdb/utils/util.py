@@ -32,5 +32,5 @@ def CheckDateString(datestring):
 		return False
 
 def CheckDateTime(datetimedate):
-	if "datetime.date" in type(datetimedate): return True
+	if "datetime.date" in str(type(datetimedate)): return True
 	else: return False
