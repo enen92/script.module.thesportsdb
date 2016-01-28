@@ -516,6 +516,7 @@ Default Properties
 Specific module Properties
 * `strDescription` - returns the description of the event (english only)
 * `eventDateTime` -  returns a datetime object with the datetime of the event (GMT timezone)
+
 Note: event lookups do not return the team objects. You need a second lookup using the teamId's to grab the team objects
 
 ####User
