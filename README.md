@@ -519,7 +519,7 @@ Note: event lookups do not return the team objects. You need a second lookup usi
 
 ####Livescores
 Default Properties
-* `Date` -  
+* `Date` - datetime string for the event time (eg: "2016-01-28T17:30:00+00:00" - GMT timezone) 
 * `League` - League string for the live event
 * `Round` -  Round for the league of the live event
 * `Spectators` -  Number of spectators for the live event
@@ -527,7 +527,7 @@ Default Properties
 * `HomeTeam_Id` - Id for the hometeam for the live event on thesportsdb
 * `AwayTeam` -  Name for the awayteam for the live event
 * `AwayTeam_Id` -  Id for the awayteam for the live event on thesportsdb
-* `Time` - time string for the event time (eg: "2016-01-28T17:30:00+00:00" - GMT timezone)
+* `Time` - time string for the match
 * `HomeGoals` -  Number of goals for the hometeam
 * `AwayGoals` -  Number of goals for the awayteam
 * `HomeGoalDetails` -  Details of the goals for the hometeam
