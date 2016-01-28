@@ -1,9 +1,7 @@
 # script.module.thesportsdb
 ![TheSportsDb Icon](http://s17.postimg.org/h3eanic3z/icon.png)
 
-A python module packaged as a Kodi script module to wrap all thesportsdb API methods and for you to use on your own addon
-
-*Work/documentation in progress.....
+A python module packaged as a Kodi script module to wrap all thesportsdb API methods and for you to use on your own addon. An API key is required, please visit [thesportsdb](http://www.thesportsdb.com/forum/viewtopic.php?f=6&t=6) for more information.
 
 ##Usage
 
@@ -518,6 +516,48 @@ Specific module Properties
 * `eventDateTime` -  returns a datetime object with the datetime of the event (GMT timezone)
 
 Note: event lookups do not return the team objects. You need a second lookup using the teamId's to grab the team objects
+
+####Livescores
+Default Properties
+* `Date` -  
+* `League` - League string for the live event
+* `Round` -  Round for the league of the live event
+* `Spectators` -  Number of spectators for the live event
+* `HomeTeam` -  Name of the hometeam for the live event
+* `HomeTeam_Id` - Id for the hometeam for the live event on thesportsdb
+* `AwayTeam` -  Name for the awayteam for the live event
+* `AwayTeam_Id` -  Id for the awayteam for the live event on thesportsdb
+* `Time` - time string for the event time (eg: "2016-01-28T17:30:00+00:00" - GMT timezone)
+* `HomeGoals` -  Number of goals for the hometeam
+* `AwayGoals` -  Number of goals for the awayteam
+* `HomeGoalDetails` -  Details of the goals for the hometeam
+* `AwayGoalDetails` -  Details of the goals for the awayteam
+* `HomeLineupGoalkeeper` -  Details for the hometeam goalkeeper
+* `AwayLineupGoalkeeper` -  Details for the awayteam goalkeeper
+* `HomeLineupDefense` -  Details for the hometeam defense
+* `AwayLineupDefense` -  Details for the awayteam defense
+* `HomeLineupMidfield` -  Details for the hometeam midfielders
+* `AwayLineupMidfield` -  Details for the awayteam midfielders
+* `HomeLineupForward` -  Details for the hometeam forwarders
+* `AwayLineupForward` -  Details for the awayteam forwarders
+* `HomeLineupSubstitutes` -  Details for the hometeam bench
+* `AwayLineupSubstitutes` -  Details for the awayteam bench
+* `HomeLineupCoach` -  Hometeam coach
+* `AwayLineupCoach` -  Awayteam coach
+* `HomeSubDetails` -  Substitutions details for the hometeam
+* `AwaySubDetails` - Substitutions details for the awayteam
+* `HomeTeamFormation` -  Formation of the hometeam
+* `AwayTeamFormation` -  Formation of the awayteam
+* `Location` -  Location of the event
+* `Stadium` -  Name of the stadium of the event
+* `HomeTeamYellowCardDetails` - Details for the yellow cards of the hometeam 
+* `AwayTeamYellowCardDetails` -  Details for the yellow cards of the awayteam
+* `HomeTeamRedCardDetails` -  Details for the redcards of the hometeam
+* `AwayTeamRedCardDetails` -  Details for the redcards of the awayteam
+
+Specific module Properties
+* `DateTime` - Returns the date of the event as a python datetime object (GMT timezone)
+
 
 ####User
 * `strUsername ` - the user username
