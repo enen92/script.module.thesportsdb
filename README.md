@@ -460,6 +460,64 @@ Specific module Properties
 * `total` - number of points
 * `Team` - a team object (defined if objects=True). All the other team properties are available
 
+####Event
+Default Properties
+* `idEvent` - id of the event on thesportsdb
+* `idSoccerXML` - id of the event on soccerXML
+* `strEvent` - event name
+* `strFilename` - filename name that matches easily the event
+* `strSport` - sport of the event
+* `idLeague` - id of the league on thesportsdb for the event
+* `strLeague` - name of the league on the thesportsdb for the event
+* `strSeason` - season identifier for the event
+* `strDescriptionEN` - description/plot of the event (english only)
+* `strHomeTeam` - name of the home team
+* `strAwayTeam` - name of the away team
+* `intHomeScore` - score of the hometeam
+* `intRound` - round of the event on the league it refers to
+* `intAwayScore` - away score
+* `intSpectators` - number of spectators
+* `strHomeGoalDetails` - details for the goals of the hometeam
+* `strHomeRedCards` - details for the redcards of the hometeam
+* `strHomeYellowCards` - details for the yellow cards of the hometeam
+* `strHomeLineupGoalkeeper` - starter goalkeeper of the hometeam
+* `strHomeLineupDefense` - starter defense of the hometeam
+* `strHomeLineupMidfield` - starter midfielders of the hometeam
+* `strHomeLineupForward` - starter forwarders of the hometeam
+* `strHomeLineupSubstitutes` - substitutes/bench for the hometeam
+* `strHomeFormation` - formation of the hometeam (eg 4-4-2)
+* `strAwayRedCards` - details for the redcards of the awayteam
+* `strAwayYellowCards` - details for the yellow cards of the awayteam
+* `strAwayGoalDetails` - away team goal details
+* `strAwayLineupGoalkeeper` - starter goalkeeper of the awayteam
+* `strAwayLineupDefense` - starter defense of the awayteam
+* `strAwayLineupMidfield` - starter midfielders of the awayteam
+* `strAwayLineupForward` - starter forwarders of the awayteam
+* `strAwayLineupSubstitutes` - substitutes of the awayteam
+* `strAwayFormation` - formation of the away team
+* `intHomeShots` - number of shots for the hometeam
+* `intAwayShots` - number of away shots for the awayteam
+* `dateEvent` - date of the event (eg 2015-10-10)
+* `strDate` - date of the event (2015/10/10)
+* `strTime` - time of the event (eg 16:00:00+00:00)
+* `strTVStation` - tvstations of the event
+* `idHomeTeam` - id of the hometeam
+* `idAwayTeam` - id of the awayteam
+* `strResult` - result of the event 
+* `strCircuit` - name of the circuit (motorsports)
+* `strCountry` - country of the event (motorsports)
+* `strCity` - city of the event (motorsports)
+* `strPoster` - poster of the event
+* `strFanart` - fanart of the event
+* `strThumb` - thumbnail of the event
+* `strBanner` - banner of the event
+* `strMap` - image of the map of the event (motorsports)
+
+Specific module Properties
+* `strDescription` - returns the description of the event (english only)
+* `eventDateTime` -  returns a datetime object with the datetime of the event (GMT timezone)
+Note: event lookups do not return the team objects. You need a second lookup using the teamId's to grab the team objects
+
 ####User
 * `strUsername ` - the user username
 * `Teams ` - a list of teamids for the teams the user loves (or team objects if objects=True)
