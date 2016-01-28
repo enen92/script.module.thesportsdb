@@ -377,12 +377,12 @@ Default Properties
 * `strFanart2` - fanart 2 of the league
 * `strFanart3` - fanart 3 of the league
 * `strFanart4` - fanart 4 of the league
-* `strBanner - league banner
-* `strBadge - league badge (logo)
-* `strLogo - league logo clearart
-* `strPoster - league poster
-* `strTrophy - league trophy clearart
-* `strNaming - league naming
+* `strBanner` - league banner
+* `strBadge` - league badge (logo)
+* `strLogo` - league logo clearart
+* `strPoster` - league poster
+* `strTrophy` - league trophy clearart
+* `strNaming` - league naming
 
 Specific module Properties
 * `AlternativeNameFirst` - Returns the alternative name of the team first and the default team name as fallback
