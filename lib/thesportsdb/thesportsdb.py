@@ -394,6 +394,8 @@ class Api:
             if objects:
                 api = Api(API_KEY)
             if events:
+                if type(events) != list:
+                    events = [events]
                 for event in events:
                     eventobj = livescores.as_event(event)
                     try:

@@ -57,12 +57,24 @@ class Livescore:
         self.AwayTeamYellowCardDetails = ""
         self.HomeTeamRedCardDetails = ""
         self.AwayTeamRedCardDetails = ""
+        self.HomeTeamObj = ""
+        self.AwayTeamObj = ""
 
-    def setHomeTeamObj(self,img):
-        self.HomeTeamObj = img
+    def setHomeTeamObj(self,obj):
+        self.HomeTeamObj = obj
 
-    def setAwayTeamObj(self,img):
-        self.AwayTeamObj = img
+    def setAwayTeamObj(self,obj):
+        self.AwayTeamObj = obj
+
+    @property 
+    def DateTime(self):
+        if self.Date:
+            try:
+                date = self.Date.split("+")[0]
+                return datetime.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S")
+            except: return None
+        else:
+            return None
 
 
 def as_event(d):
