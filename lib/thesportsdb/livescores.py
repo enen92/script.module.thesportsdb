@@ -19,6 +19,7 @@
 '''
 
 import datetime
+import time
 
 class Livescore:
     def __init__(self):
@@ -71,7 +72,7 @@ class Livescore:
         if self.Date:
             try:
                 date = self.Date.split("+")[0]
-                return datetime.datetime.strptime(date, "%Y-%m-%dT%H:%M:%S")
+                return datetime.datetime.fromtimestamp(time.mktime(time.strptime(date, "%Y-%m-%dT%H:%M:%S")))
             except: return None
         else:
             return None
