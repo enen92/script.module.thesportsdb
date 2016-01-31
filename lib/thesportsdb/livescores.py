@@ -55,6 +55,8 @@ class Livescore:
         self.Location = ""
         self.Stadium = ""
         self.Referee = ""
+        self.HomeSubDetails = ""
+        self.AwaySubDetails = ""
         self.HomeTeamYellowCardDetails = ""
         self.AwayTeamYellowCardDetails = ""
         self.HomeTeamRedCardDetails = ""
