@@ -554,6 +554,7 @@ Default Properties
 * `AwayTeamYellowCardDetails` -  Details for the yellow cards of the awayteam
 * `HomeTeamRedCardDetails` -  Details for the redcards of the hometeam
 * `AwayTeamRedCardDetails` -  Details for the redcards of the awayteam
+* `Referee`- Match referee name
 
 Specific module Properties
 * `DateTime` - Returns the date of the event as a python datetime object (GMT timezone)
