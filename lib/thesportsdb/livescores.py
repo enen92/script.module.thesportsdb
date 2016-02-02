@@ -61,6 +61,8 @@ class Livescore:
         self.AwayTeamYellowCardDetails = ""
         self.HomeTeamRedCardDetails = ""
         self.AwayTeamRedCardDetails = ""
+        self.HomeLineupCoach = ""
+        self.AwayLineupCoach = ""
         self.HomeTeamObj = ""
         self.AwayTeamObj = ""
 
