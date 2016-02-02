@@ -555,6 +555,8 @@ Default Properties
 * `HomeTeamRedCardDetails` -  Details for the redcards of the hometeam
 * `AwayTeamRedCardDetails` -  Details for the redcards of the awayteam
 * `Referee`- Match referee name
+* `HomeLineupCoach` - Home team coach name
+* `AwayLineupCoach` - Away team coach name
 
 Specific module Properties
 * `DateTime` - Returns the date of the event as a python datetime object (GMT timezone)
