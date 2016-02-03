@@ -451,7 +451,7 @@ Specific module Properties
 * `played` - number of played matches
 * `goalsfor` - number of goals scored
 * `goalsagainst` - number of goals suffered
-* `goaldifference` - goal difference
+* `goalsdifference` - goal difference
 * `win` - number of wins
 * `draw` - number of draws
 * `loss` - number of losses
