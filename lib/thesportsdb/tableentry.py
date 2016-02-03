@@ -25,7 +25,7 @@ class Tableentry:
         self.played = ""
         self.goalsfor = ""
         self.goalsagainst = ""
-        self.goaldifference = ""
+        self.goalsdifference = ""
         self.win = ""
         self.draw = ""
         self.loss = ""
