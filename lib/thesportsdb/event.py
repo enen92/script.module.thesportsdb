@@ -95,6 +95,14 @@ class Event:
                 hour = 0
             return datetime.datetime(year=year,month=month,day=day,hour=hour,minute=minute,second=seconds)
         except: return None
+    
+    def setHomeTeamObj(self,obj=None):
+        if obj:
+            self.HomeTeamObj = obj
+
+    def setAwayTeamObj(self,obj=None):
+        if obj:
+            self.AwayTeamObj = obj
 
 def as_event(d):
     e = Event()
