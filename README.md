@@ -348,6 +348,7 @@ Default Properties
 * `idSoccerXML` - id of the league on soccerXML
 * `strSport` - sport of the league
 * `strLeague` - league name
+* `idLeague` - id of the league on the database
 * `strLeagueAlternate` - alternative league name
 * `intFormedYear` - league formation year
 * `dateFirstEvent` - date of the first event
